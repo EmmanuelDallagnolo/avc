@@ -1,0 +1,71 @@
+#divranking{
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  visibility: hidden;
+
+  height: 800px;
+  width: 1350px;
+}
+#rankingjogadores{
+  margin-top: 187px;
+  margin-left: 230;
+  width: 1000px;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  width:80%
+}
+#ranktitulo{
+  font-family: 'Permanent Marker', cursive;
+  margin-top: 141px;
+  margin-left: 621px;
+  position:fixed;
+  color: white;
+}
+#logoranking{
+  position: fixed;
+  top: 15px;
+  right: 654px;
+}
+#rankingopen{
+  position: fixed;
+      top: 570px;
+      left: 879px;
+      height: 50px;
+      width: 50px;
+}
+#botaosairranking{
+  left: 700px;
+    top: 653px;
+  z-index: 2;
+  visibility: hidden;
+  position: fixed;
+}
+#fecharankjogo{
+  left: 700px;
+    top: 653px;
+  z-index: 2;
+  visibility: hidden;
+  position: fixed;
+}
+#icongold{
+  position: fixed;
+top: 221px;
+right: 1160px;
+
+}
+#iconsilver{
+  position: fixed;
+top: 251px;
+right: 1160px;
+
+}
+
+#iconbronze{
+  position: fixed;
+top: 281px;
+right: 1160px;
+
+}

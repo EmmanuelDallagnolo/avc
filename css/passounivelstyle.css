@@ -1,0 +1,24 @@
+#passnivel{
+  visibility: hidden;
+position:fixed;
+top: 0;
+left: 0;
+margin-left: 600px;
+margin-top: 100px;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 200px;
+  background-color: black;
+}
+#npassnivel{
+  visibility: hidden;
+position:fixed;
+top: 0;
+left: 0;
+margin-left: 600px;
+margin-top: 100px;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 200px;
+  background-color: black;
+}
