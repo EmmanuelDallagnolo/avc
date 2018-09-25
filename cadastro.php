@@ -26,7 +26,7 @@
 </head>
 <body class="text-center">
   <div class="" id="cadernocadastro">
-    <form class="form-signin" action="verificcadastro.php" method="post">
+    <form class="form-signin" action="includes/verificcadastro.php" method="post">
       <br>
       <br>
       <h1 class="h1 mb-3 font-weight-normal newFont" id= "caderson" style="color:black;">Cadastro</h1>

@@ -21,7 +21,6 @@ foreach($_SESSION["questoes"] as $key=>$value){
 
   if ($resposta == $value["correta"]) {
     $pontos += 1;
-
   }
 }
 
