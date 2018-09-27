@@ -24,16 +24,16 @@
     form += '<br>';
     form += '<br>';
     for(var i = 1; i <= document.getElementById('qtd_questoes').value; i++){
-      form += i + ')<input type="text" name="enunciado_' + i + ' " ' + '" placeholder="Enunciado questão">';
+      form += i + ')<input type="text" name="enunciado_' + i + '" ' + '" placeholder="Enunciado questão">';
       form += '<br>';
       form += '<br>';
-      form += 'A) <input type="text" name="opcao1_' + i + ' " ' + '>';
+      form += 'A) <input type="text" name="opcao1_' + i + '" ' + '>';
       form += '<br>';
-      form += 'B) <input type="text" name="opcao2_' + i + ' " ' + '>';
+      form += 'B) <input type="text" name="opcao2_' + i + '" ' + '>';
       form += '<br>';
-      form += 'C) <input type="text" name="opcao3_' + i + ' " ' + '>';
+      form += 'C) <input type="text" name="opcao3_' + i + '" ' + '>';
       form += '<br>';
-      form += 'D) <input type="text" name="opcao4_' + i + ' " ' + '>';
+      form += 'D) <input type="text" name="opcao4_' + i + '" ' + '>';
       form += '<br>';
       form += '<br>';
       form += 'Alternativa correta: <input type="text" name="correta" placeholder="Alternativa correta">';
