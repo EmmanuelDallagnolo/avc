@@ -44,12 +44,12 @@
       form += '<br>';
     }
     form += '<br>';
-    form += '<input type="submit" id="finalizaprova" onclick=""  >Finalizar</input>';
+    form += '<input type="text"  style="visibility:hidden;"name="qtd_questoes" value="'+ document.getElementById('qtd_questoes') +'">';
+    form += '<input type="submit" id="finalizaprova" onsubmit=""  >Finalizar</input>';
     form += '</form>';
-
     document.getElementById('cadastroprova').innerHTML = form;
-
   }
+
   </script>
 </head>
 <body>
