@@ -5,6 +5,7 @@ include_once("ranking.php");
 include_once("montaprova.php");
 include_once("csebody.php");
 include_once("passounivel.php");
+include_once("montaprovascadastradas.php");
 ?>
 <html lang="en">
 <head>
@@ -36,6 +37,20 @@ include_once("passounivel.php");
 
 
   <style media="screen">
+  #prova_cadastrada{
+    visibility: hidden;
+    position: fixed;
+    height: 600px;
+    width: 800px;
+    background-color: black;
+    margin-left: 400px;
+    margin-top: 100px;
+    overflow: auto;
+
+    padding-left: 25px;
+        top: 0px;
+
+  }
   body{
     background-image: url("imgs/fundojogo.jpg");
     background-repeat: no-repeat;
@@ -45,6 +60,9 @@ include_once("passounivel.php");
   }
   </style>
   <script>
+  function abrirprovacad() {
+    document.getElementById('prova_cadastrada').style.visibilty="visible";
+  }
   function fechacse() {
     document.getElementById("cse").style.visibility = "hidden";
     document.getElementById("csebd").style.visibility = "hidden";
@@ -64,8 +82,10 @@ include_once("passounivel.php");
     <img src="imgs/home.png" id="iconhome" onclick="logout();" alt="" />
     <img src="imgs/ranking.png" id="iconranking" onclick="abrirranking();"alt="" />
     <h1 class="newFont" id="titulo">A VIDA COBRA OS ESTUDOS</h1>
-  </div>
+      <input type="text" id="codigoprova" placeholder="codigo prova" value="">
+      <input type="button" name="submitcodigoprova" onclick="abrirprovacad()" value="Ok">
 
+  </div>
 
   <canvas id="tela" width="800" height="600" style="z-index:-1;"></canvas>
 </body>
