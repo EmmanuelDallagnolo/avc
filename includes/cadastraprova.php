@@ -22,7 +22,7 @@
   // echo $codigo;
   $cadastraassuntoprova = php_insert("INSERT INTO provas_cadastradas VALUES ($codigo,'{$_POST['assuntoprova']}')");
   for($i = 1; $i <= $_POST['qtd_questoes']; $i++){
-    $inserequestoes =  php_insert("INSERT INTO questoes_cadastradas VALUES (DEFAULT, '{$_POST['enunciado_'.$i]}', '{$_POST['opcao1_'.$i]}', '{$_POST['opcao2_'.$i]}', '{$_POST['opcao3_'.$i]}', '{$_POST['opcao4_'.$i]}', '{$_POST['correta']}', '{$_POST['pesoquestao']}', $codigo)");
+    $inserequestoes =  php_insert("INSERT INTO questoes_cadastradas VALUES (DEFAULT, '{$_POST['enunciado_'.$i]}', '{$_POST['opcao1_'.$i]}', '{$_POST['opcao2_'.$i]}', '{$_POST['opcao3_'.$i]}', '{$_POST['opcao4_'.$i]}', '{$_POST['correta_'.$i]}', '{$_POST['pesoquestao_'.$i]}', $codigo)");
     // echo "INSERT INTO questoes_cadastradas VALUES (DEFAULT, '{$_POST['enunciado_'.$i]}', '{$_POST['opcao1_'.$i]}', '{$_POST['opcao2_'.$i]}', '{$_POST['opcao3_'.$i]}', '{$_POST['opcao4_'.$i]}', '{$_POST['correta']}', '{$_POST['pesoquestao']}', $codigo)";
   }
   // the message

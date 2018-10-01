@@ -36,10 +36,10 @@
       form += 'D) <input type="text" name="opcao4_' + i + '" ' + '>';
       form += '<br>';
       form += '<br>';
-      form += 'Alternativa correta: <input type="text" name="correta" placeholder="Alternativa correta">';
+      form += 'Alternativa correta: <input type="text" name="correta_' + i + '" placeholder="Alternativa correta">';
       form += '<br>';
       form += '<br>';
-      form += 'Peso da questão: <input type="text" name="pesoquestao" placeholder="Peso da questão">';
+      form += 'Peso da questão: <input type="text" name="pesoquestao_' + i + '" placeholder="Peso da questão">';
       form += '<br>';
       form += '<br>';
     }
