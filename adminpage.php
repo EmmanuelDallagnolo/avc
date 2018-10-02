@@ -15,7 +15,7 @@
   ?>
   <script type="text/javascript">
   function loadjogadores() {
-    form=  '<form class="" action="adminpage.php" onsubmit="alteradados()" method="post">'
+  var  form=  '<form class="" action="adminpage.php" method="post">'
     form+=  '<table  id="rankingjogadores">'
     form+=  '<tr>'
     form+=  '<th>Nome</th>'

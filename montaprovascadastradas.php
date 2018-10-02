@@ -26,10 +26,12 @@ include_once("includes/banco_de_dados.php");
 
   var $arrayQuestoescadastradas = new Array();
   var arrayProvacadastrada = new Array();
-  criarProvacadastrada();
+  var codigoProva;
 
 
-  function criarProvacadastrada(){
+  function criarProvacadastrada(pCodigoProva){
+    debugger;
+    codigoProva = pCodigoProva;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -39,9 +41,10 @@ include_once("includes/banco_de_dados.php");
       }
     }
 
-    xmlhttp.open("POST", "buscaprovacadastrada.php?tipo=0", true);
+    xmlhttp.open("POST", "buscaprovacadastrada.php?tipo=0&codigo="+codigoProva, true);
     xmlhttp.send();
   }
+
 
   function criarQuestoescadastradas(){
 
@@ -100,10 +103,8 @@ include_once("includes/banco_de_dados.php");
         //this.responseText
       }
     };
-    xmlhttp.open("POST", "buscaprovacadastrada.php?tipo=1", true);
+    xmlhttp.open("POST", "buscaprovacadastrada.php?tipo=1&codigo="+codigoProva, true);
     xmlhttp.send();
-
-
   }
   </script>
 
@@ -111,6 +112,7 @@ include_once("includes/banco_de_dados.php");
 <body>
 
   <div id="provacadastrada">
+
 
 
   </div>

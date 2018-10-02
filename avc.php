@@ -16,6 +16,7 @@ include_once("montaprovascadastradas.php");
   <link rel="stylesheet" type="text/css" href="css/passounivelstyle.css"/>
   <link rel="stylesheet" type="text/css" href="css/mostraprovastyle.css"/>
   <link rel="stylesheet" type="text/css" href="css/jogostyle.css"/>
+    <link rel="stylesheet" type="text/css" href="css/provacadastradastyle.css"/>
   <link rel="icon" href="imgs/logo_jDA_icon.ico">
   <script src="js/jquery.js"></script>
   <script src="js/ajax.js"></script>
@@ -37,20 +38,6 @@ include_once("montaprovascadastradas.php");
 
 
   <style media="screen">
-  #prova_cadastrada{
-    visibility: hidden;
-    position: fixed;
-    height: 600px;
-    width: 800px;
-    background-color: black;
-    margin-left: 400px;
-    margin-top: 100px;
-    overflow: auto;
-
-    padding-left: 25px;
-        top: 0px;
-
-  }
   body{
     background-image: url("imgs/fundojogo.jpg");
     background-repeat: no-repeat;
@@ -61,7 +48,8 @@ include_once("montaprovascadastradas.php");
   </style>
   <script>
   function abrirprovacad() {
-    document.getElementById('prova_cadastrada').style.visibilty="visible";
+    criarProvacadastrada(document.getElementById("codigoprova").value);
+    document.getElementById("provacadastrada").style.visibility="visible";
   }
   function fechacse() {
     document.getElementById("cse").style.visibility = "hidden";
@@ -74,7 +62,19 @@ include_once("montaprovascadastradas.php");
   document.getElementById('divranking').style.visibility="visible";
   document.getElementById('fecharankjogo').style.visibility="visible";
   }
+  function buscarcodigoprova(input){
+    var valor = input.value;
+    var xmlhttp = new XMLHttpRequest();
 
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //this.responseText
+      }
+    }
+
+    xmlhttp.open("GET", "buscaprovacadastrada.php?valor="+valor, true);
+    xmlhttp.send();
+  }
   </script>
 </head>
 <body>
@@ -82,9 +82,8 @@ include_once("montaprovascadastradas.php");
     <img src="imgs/home.png" id="iconhome" onclick="logout();" alt="" />
     <img src="imgs/ranking.png" id="iconranking" onclick="abrirranking();"alt="" />
     <h1 class="newFont" id="titulo">A VIDA COBRA OS ESTUDOS</h1>
-      <input type="text" id="codigoprova" placeholder="codigo prova" value="">
-      <input type="button" name="submitcodigoprova" onclick="abrirprovacad()" value="Ok">
-
+    <input type="text" id="codigoprova"  name="codigoprovainput" placeholder="codigo prova" value="">
+    <input type="button" name="submitcodigoprova"  onclick="abrirprovacad();" value="Ok">
   </div>
 
   <canvas id="tela" width="800" height="600" style="z-index:-1;"></canvas>

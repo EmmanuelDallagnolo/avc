@@ -1,9 +1,9 @@
 <?php
 include_once("includes/banco_de_dados.php");
 session_start();
-if (isset($_POST['codigoprova'])) {
-  $arrayQuestoescadastradas = select("SELECT * FROM questoes_cadastradas WHERE provas_cadastradas_id = '{$_POST['codigoprova']}'");
-  $arrayProvascadastradas = select("SELECT * FROM provas_cadastradas WHERE id='{$_POST['codigoprova']}'");
+if (isset($_GET['codigo'])) {
+  $arrayQuestoescadastradas = select("SELECT * FROM questoes_cadastradas WHERE provas_cadastradas_id = '{$_GET['codigo']}'");
+  $arrayProvascadastradas = select("SELECT * FROM provas_cadastradas WHERE id='{$_GET['codigo']}'");
 
   $_SESSION["questoescadastradas"] = $arrayQuestoescadastradas;
 
