@@ -60,7 +60,7 @@ include_once("includes/banco_de_dados.php");
         form += arrayProvacadastrada[0].nome + '<br>';
         for(var i = 0; i < $arrayQuestoescadastradas.length; i++){
 
-          form += '<xmp> '  + $arrayQuestoescadastradas[i].enunciado + ' </xmp> <br>';
+          form += '<xmp> ' + $arrayQuestoescadastradas[i].enunciado + ' </xmp> <br>';
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + $arrayQuestoescadastradas[i].id + '" id="aa" value="a" required >';
           form += '<label class="form-check-label" for="aa">';

@@ -11,3 +11,10 @@
   top: 0px;
 
 }
+#codigoprova{
+  visibility: hidden;
+
+}
+#codigoprovabotao{
+  visibility: hidden;
+}

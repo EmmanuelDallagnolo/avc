@@ -35,6 +35,7 @@ include_once("montaprovascadastradas.php");
   <script src="js/camera.js"></script>
   <script src="js/cseteste.js"></script>
   <script src="js/prova.js"></script>
+  <script src="js/provacadastrada.js"></script>
 
 
   <style media="screen">
@@ -49,7 +50,8 @@ include_once("montaprovascadastradas.php");
   <script>
   function abrirprovacad() {
     criarProvacadastrada(document.getElementById("codigoprova").value);
-    document.getElementById("provacadastrada").style.visibility="visible";
+    document.getElementById("codigoprovabotao").style.visibility = "hidden";
+    document.getElementById("codigoprova").style.visibility = "hidden";
   }
   function fechacse() {
     document.getElementById("cse").style.visibility = "hidden";
@@ -62,19 +64,7 @@ include_once("montaprovascadastradas.php");
   document.getElementById('divranking').style.visibility="visible";
   document.getElementById('fecharankjogo').style.visibility="visible";
   }
-  function buscarcodigoprova(input){
-    var valor = input.value;
-    var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        //this.responseText
-      }
-    }
-
-    xmlhttp.open("GET", "buscaprovacadastrada.php?valor="+valor, true);
-    xmlhttp.send();
-  }
   </script>
 </head>
 <body>
@@ -83,7 +73,7 @@ include_once("montaprovascadastradas.php");
     <img src="imgs/ranking.png" id="iconranking" onclick="abrirranking();"alt="" />
     <h1 class="newFont" id="titulo">A VIDA COBRA OS ESTUDOS</h1>
     <input type="text" id="codigoprova"  name="codigoprovainput" placeholder="codigo prova" value="">
-    <input type="button" name="submitcodigoprova"  onclick="abrirprovacad();" value="Ok">
+    <input type="button" id="codigoprovabotao" name="submitcodigoprova"  onclick="abrirprovacad();" value="Ok">
   </div>
 
   <canvas id="tela" width="800" height="600" style="z-index:-1;"></canvas>

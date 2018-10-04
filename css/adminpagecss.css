@@ -1,0 +1,38 @@
+#formadminpage{
+  margin-left: 192px;
+  margin-top: 105px;
+}
+#rankingjogadores{
+
+  color: white;
+
+}
+#btadmlogin{
+      margin-left: 1342px;
+}
+.inputForm {
+  background-color: transparent;
+  border: 3px;
+  outline: none;
+  box-shadow: none !important;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Indie Flower', cursive;
+}
+.inputForm:focus{
+  background-color: transparent;
+}
+.newFont{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Indie Flower', cursive;
+}
+#titulos{
+  font-size: 20px;
+  padding-left: 20px;
+}
+#titleadm{
+  color: white;
+  margin-left: 600px;
+}
+#pontuacao{
+  padding-left: 20px;
+}

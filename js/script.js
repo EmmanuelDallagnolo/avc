@@ -31,7 +31,7 @@ window.onload = function(){
 	paredes();
 	Cseabrir();
 	Provaabrir();
-
+Provacadasradaabrir();
 	window.addEventListener("keydown",keydownHandler,false);
 	window.addEventListener("keyup",keyupHandler,false);
 	jogador.posX = Math.max(0, Math.min(cnv.width - jogador.width, jogador.posX));
@@ -92,12 +92,6 @@ window.onload = function(){
 	}
 
 	function desenhaTema(){
-		// ctx.font = "30px";
-		// ctx.fillStyle = "red";
-		//
-		// ctx.textAlign = "center";
-		// ctx.fillText(sexo, 400, 300	);
-
 	}
 
 
@@ -109,13 +103,15 @@ window.onload = function(){
 		teleportajogador(jogador,1126,672);
 		funcaocse(jogador);
 		funcaoprova(jogador);
-		//	paredecolide();
+		funcaoprovacadastrada(jogador)
+		// while (document.getElementById('prova').style.visibility="visible") {
+		// 	jogador.mvRight = false;
+		// 	jogador.mvLeft = false;
+		// 	jogador.mvUp = false;
+		// 	jogador.mvDown = false;
+		// }
 	}
-
-
-
 }
-
 function validate() {
 	if (document.formLog.user.value == "" || document.formLog.email.value == "" || document.formLog.pass.value == "") {
 		alert("Preencha todos os campos!!");

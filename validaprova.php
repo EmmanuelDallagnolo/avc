@@ -18,7 +18,6 @@ foreach($_SESSION["questoes"] as $key=>$value){
     $resposta = 'D';
   }
   $prova_finalizada = php_insert("INSERT INTO jogadores_has_questoes VALUES ({$_SESSION["usuario"]["id"]},{$value["id"]}, '{$resposta}')");
-
   if ($resposta == $value["correta"]) {
     $pontos += 1;
   }
