@@ -26,7 +26,12 @@
 
 
 </style>
-<?php include_once("ranking.php") ?>
+<?php
+include_once("ranking.php");
+if(isset($_GET["erro"]) && $_GET["erro"] == 1){
+  echo "<script>alert('Usuario ou senha incorreto')</script>";
+}
+?>
 <script type="text/javascript">
 function abreranking() {
   document.getElementById('divranking').style.visibility="visible";

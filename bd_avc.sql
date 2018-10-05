@@ -15,7 +15,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
+CREATE DATABASE bd_avc;
+USE bd_avc;
 --
 -- Banco de dados: `bd_avc`
 --
@@ -108,18 +109,6 @@ INSERT INTO `niveis` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professores`
---
-
-CREATE TABLE `professores` (
-  `id` int(10) UNSIGNED NOT NULL COMMENT 'identificação da tabela professores',
-  `nome` varchar(45) NOT NULL COMMENT 'nome dos professores',
-  `sobrenome` varchar(45) NOT NULL COMMENT 'sobrenome dos professores',
-  `usuario` varchar(45) NOT NULL COMMENT 'nome de usuário dos professores',
-  `email` varchar(45) NOT NULL COMMENT 'email dos professores',
-  `senha` varchar(60) NOT NULL COMMENT 'senha dos professores',
-  `data_cadastro` datetime NOT NULL COMMENT 'data do cadastro dos professores'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela dos professores';
 
 -- --------------------------------------------------------
 
