@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/10/2018 às 00:14
+-- Tempo de geração: 14/09/2018 às 03:10
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_avc`
 --
-
+CREATE DATABASE IF NOT EXISTS `bd_avc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bd_avc`;
 -- --------------------------------------------------------
 
 --
@@ -47,7 +48,7 @@ CREATE TABLE `jogadores` (
 --
 
 INSERT INTO `jogadores` (`id`, `nome`, `sobrenome`, `usuario`, `avatar`, `data_cadastro`, `email`, `senha`, `data_nasci`, `nivel_prova`, `nmr_prova`, `pontuacao`, `provas_feitas`) VALUES
-(1, 'emmanuel', 'dallagnolo', 'nuel', '0', '2018-08-24 03:19:03', 'emmanueldallagnolo@gmail.com', '123', '2018-08-08', 1, 3, '2.00', 2),
+(1, 'emmanuel', 'dallagnolo', 'nuel', '1', '2018-08-24 03:19:03', 'emmanueldallagnolo@gmail.com', '123', '2018-08-08', 1, 1, '1.37', 0),
 (2, 'andre', 'bitencourt', 'velho', '0', '2018-08-24 03:19:49', 'andre@gmail.com', '123', '1945-08-08', 1, 4, '0.00', 1),
 (4, 'guilherme', 'lins', 'gordinho fibrado', '0', '2018-09-08 01:56:01', 'guilhermelins@gmail.com', '123', '2018-03-12', 1, 1, '1.00', 0);
 
@@ -63,16 +64,21 @@ CREATE TABLE `jogadores_has_questoes` (
   `resposta` varchar(45) NOT NULL COMMENT 'atributo onde guardará a resposta selecionada pelos jogadores'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela associatiova de jogadores e questões';
 
--- --------------------------------------------------------
-
 --
--- Estrutura para tabela `jogadores_has_questoes_cadastradas`
+-- Fazendo dump de dados para tabela `jogadores_has_questoes`
 --
 
-CREATE TABLE `jogadores_has_questoes_cadastradas` (
-  `jogadores_id` int(10) UNSIGNED NOT NULL,
-  `questoes_cadastradas_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `jogadores_has_questoes` (`jogadores_id`, `questoes_id`, `resposta`) VALUES
+(1, 1, 'A'),
+(1, 2, 'C'),
+(1, 3, 'B'),
+(1, 4, 'C'),
+(1, 5, 'B'),
+(1, 6, 'C'),
+(1, 7, 'B'),
+(1, 8, 'C'),
+(1, 9, 'B'),
+(1, 10, 'C');
 
 -- --------------------------------------------------------
 
@@ -131,38 +137,21 @@ CREATE TABLE `provas` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'identicação das provas',
   `temas_id` int(10) UNSIGNED NOT NULL COMMENT 'atributo identificador da tabela temas',
   `niveis_id` int(10) UNSIGNED NOT NULL COMMENT 'atributo identificador da tabela níveis',
-  `nome` varchar(45) NOT NULL COMMENT 'nome das provas '
+  `nome` varchar(45) NOT NULL COMMENT 'nome das provas ',
+  `gato_prova` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela de provas';
 
 --
 -- Fazendo dump de dados para tabela `provas`
 --
 
-INSERT INTO `provas` (`id`, `temas_id`, `niveis_id`, `nome`) VALUES
-(1, 1, 1, 'Introdução HTML'),
-(2, 2, 1, 'Introdução PHP'),
-(3, 3, 1, 'Introdução CSS'),
-(4, 4, 2, 'Introdução Java Script'),
-(5, 5, 2, 'Introdução SQL'),
-(6, 6, 2, 'Introdução jQuery');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `provas_cadastradas`
---
-
-CREATE TABLE `provas_cadastradas` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(2000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Fazendo dump de dados para tabela `provas_cadastradas`
---
-
-INSERT INTO `provas_cadastradas` (`id`, `nome`) VALUES
-(24005, 'Andre');
+INSERT INTO `provas` (`id`, `temas_id`, `niveis_id`, `nome`, `gato_prova`) VALUES
+(1, 1, 1, 'Introdução HTML', 0),
+(2, 2, 1, 'Introdução PHP', 0),
+(3, 3, 1, 'Introdução CSS', 0),
+(4, 4, 2, 'Introdução Java Script', 0),
+(5, 5, 2, 'Introdução SQL', 0),
+(6, 6, 2, 'Introdução jQuery', 0);
 
 -- --------------------------------------------------------
 
@@ -195,7 +184,7 @@ INSERT INTO `questoes` (`enunciado`, `id`, `alternativa_a`, `alternativa_b`, `al
 ('Escolha o elemento HTML correto para definir o texto enfatizado:', 6, '<italic>', '<i>', '<em>', '<br>', 'C', 1, 1),
 ('Qual caractere é usado para indicar uma tag final?', 7, '<', '*', '^', '/', 'D', 1, 1),
 ('Como você pode abrir um link em uma nova aba / janela do navegador?', 8, '<a href="url" new>', '<a href="url" target="_blank">', '<a href="url" target="new">', '<a href="url" new ="url">', 'B', 1, 1),
-('Quais desses elementos são todos os elementos <table>?', 9, '<table><tr><td>', '<table><head><tfoot>', '<thead><body><tr>', '<table><tr><tt>', 'D', 1, 1),
+('Quais desses elementos são todos os elementos <table>?', 9, '<table><tr><td>', '<table><head><tfoot>', '<thead><body><tr>', '<table><tr><tt>', 'A', 1, 1),
 ('Como você pode fazer uma lista numerada?', 10, '<ul>', '<list>', '<ol>', '<dl>', 'C', 1, 1),
 ('O que significa o PHP?', 11, 'Hypertext Preprocessor', 'Personal Hypertext Processor', 'Private Home Page', 'Prototype hypertext page', 'A', 1, 2),
 ('Quais os delimitadores que cercam os scripts do PHP?', 12, '<?php>...</?>', '<?php...?>', '<script>...</script>', '<&>...</&>', 'B', 1, 2),
@@ -214,7 +203,7 @@ INSERT INTO `questoes` (`enunciado`, `id`, `alternativa_a`, `alternativa_b`, `al
 ('Qual é a sintaxe CSS correta?', 25, 'body {color: black}', 'body:color=black;', '{body;color:black;}', '{body:color=black;}', 'A', 1, 3),
 ('Como você insere um comentário em um arquivo CSS?', 26, '// this is a comment', '''this is a comment', '/*this is a comment*/', '//this is a comment//', 'C', 1, 3),
 ('Qual propriedade é usada para alterar a cor do plano de fundo?', 27, 'color', 'background-color', 'bgcolor', 'background-collor', 'B', 1, 3),
-('Como você adiciona uma cor de fundo para todos os elementos <h1>?', 28, 'h1 {background-color:#FFFFFF;}', 'all.h1 {background-color:#FFFFFF;}', 'h1.all {background-color:#FFFFFF;}', 'h1({background-color:#FFFFFF;})', 'B', 1, 3),
+('Como você adiciona uma cor de fundo para todos os elementos <h1>?', 28, 'h1 {background-color:#FFFFFF;}', 'all.h1 {background-color:#FFFFFF;}', 'h1.all {background-color:#FFFFFF;}', 'h1({background-color:#FFFFFF;})', 'A', 1, 3),
 ('Qual propriedade CSS é usada para alterar a cor do texto de um elemento?', 29, 'text-color', 'color', 'fgcolor', 'color_text', 'B', 1, 3),
 ('Qual propriedade CSS controla o tamanho do texto?', 30, 'text-size', 'font-size', 'text-style', 'font-style', 'B', 1, 3),
 ('Dentro de qual elemento HTML colocamos o JavaScript?', 31, '<js>', '<scripting>', '<script>', '<javascript>', 'C', 1, 4),
@@ -247,32 +236,6 @@ INSERT INTO `questoes` (`enunciado`, `id`, `alternativa_a`, `alternativa_b`, `al
 ('Qual função jQuery é usada para impedir que o código seja executado antes que o documento seja concluído?', 58, '$(document).load()', '$(document).ready()', '$(body).onload()', '$(document).sign()', 'B', 1, 6),
 ('Qual sinal o jQuery usa como atalho para o jQuery?', 59, 'the % sign', 'the ? Sign', 'the $ sign ', 'the & sign', 'C', 1, 6),
 ('Qual método jQuery é usado para ocultar elementos selecionados?', 60, 'hidden()', 'hide()', 'display(none)', 'visible(false)', 'B', 1, 6);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `questoes_cadastradas`
---
-
-CREATE TABLE `questoes_cadastradas` (
-  `id` int(11) NOT NULL,
-  `enunciado` varchar(2000) NOT NULL,
-  `alternativa_a` varchar(200) NOT NULL,
-  `alternativa_b` varchar(200) NOT NULL,
-  `alternativa_c` varchar(200) NOT NULL,
-  `alternativa_d` varchar(200) NOT NULL,
-  `correta` char(1) NOT NULL,
-  `peso` decimal(4,2) NOT NULL,
-  `provas_cadastradas_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Fazendo dump de dados para tabela `questoes_cadastradas`
---
-
-INSERT INTO `questoes_cadastradas` (`id`, `enunciado`, `alternativa_a`, `alternativa_b`, `alternativa_c`, `alternativa_d`, `correta`, `peso`, `provas_cadastradas_id`) VALUES
-(1, 'Anos', '+-7000', 'Pariu jesus ', 'Filmou o Big Bang ', 'Tirou bv da Hebe', 'C', '1.00', 24005),
-(2, 'Gastou quanto com mulher', 'Mais de 8000', '3 carros populares', '4 kinder ovo', 'hipotecou a casa', 'D', '1.00', 24005);
 
 -- --------------------------------------------------------
 
@@ -316,14 +279,6 @@ ALTER TABLE `jogadores_has_questoes`
   ADD KEY `fk_jogadores_has_questoes_jogadores_idx` (`jogadores_id`);
 
 --
--- Índices de tabela `jogadores_has_questoes_cadastradas`
---
-ALTER TABLE `jogadores_has_questoes_cadastradas`
-  ADD PRIMARY KEY (`jogadores_id`,`questoes_cadastradas_id`),
-  ADD KEY `fk_jogadores_has_questoes_cadastradas_questoes_cadastradas1_idx` (`questoes_cadastradas_id`),
-  ADD KEY `fk_jogadores_has_questoes_cadastradas_jogadores1_idx` (`jogadores_id`);
-
---
 -- Índices de tabela `logs`
 --
 ALTER TABLE `logs`
@@ -351,24 +306,11 @@ ALTER TABLE `provas`
   ADD KEY `fk_provas_niveis1_idx` (`niveis_id`);
 
 --
--- Índices de tabela `provas_cadastradas`
---
-ALTER TABLE `provas_cadastradas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices de tabela `questoes`
 --
 ALTER TABLE `questoes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_questoes_provas1_idx` (`provas_id`);
-
---
--- Índices de tabela `questoes_cadastradas`
---
-ALTER TABLE `questoes_cadastradas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_questoes_cadastradas_provas_cadastradas1_idx` (`provas_cadastradas_id`);
 
 --
 -- Índices de tabela `temas`
@@ -406,11 +348,6 @@ ALTER TABLE `provas`
 ALTER TABLE `questoes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'identificação dos níveis', AUTO_INCREMENT=61;
 --
--- AUTO_INCREMENT de tabela `questoes_cadastradas`
---
-ALTER TABLE `questoes_cadastradas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
 -- AUTO_INCREMENT de tabela `temas`
 --
 ALTER TABLE `temas`
@@ -425,13 +362,6 @@ ALTER TABLE `temas`
 ALTER TABLE `jogadores_has_questoes`
   ADD CONSTRAINT `fk_jogadores_has_questoes_jogadores` FOREIGN KEY (`jogadores_id`) REFERENCES `jogadores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_jogadores_has_questoes_questoes1` FOREIGN KEY (`questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `jogadores_has_questoes_cadastradas`
---
-ALTER TABLE `jogadores_has_questoes_cadastradas`
-  ADD CONSTRAINT `fk_jogadores_has_questoes_cadastradas_jogadores1` FOREIGN KEY (`jogadores_id`) REFERENCES `jogadores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_jogadores_has_questoes_cadastradas_questoes_cadastradas1` FOREIGN KEY (`questoes_cadastradas_id`) REFERENCES `questoes_cadastradas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `logs`
@@ -451,12 +381,6 @@ ALTER TABLE `provas`
 --
 ALTER TABLE `questoes`
   ADD CONSTRAINT `fk_questoes_provas1` FOREIGN KEY (`provas_id`) REFERENCES `provas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `questoes_cadastradas`
---
-ALTER TABLE `questoes_cadastradas`
-  ADD CONSTRAINT `fk_questoes_cadastradas_provas_cadastradas1` FOREIGN KEY (`provas_cadastradas_id`) REFERENCES `provas_cadastradas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

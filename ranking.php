@@ -37,7 +37,6 @@ function fecharanking() {
       <?php foreach ($Usuariospontuacao as $key => $value) {
         $posicao += 1;?>
         <tr>
-
           <td><?php echo $posicao ?></td>
           <td><?php echo $value["usuario"] ?></td>
           <td><?php echo $value["pontuacao"] ?></td>
@@ -47,6 +46,5 @@ function fecharanking() {
   </div>
   <button type="button" id="botaosairranking" onclick="fecharanking();" name="button">HOME</button>
   <button type="button" name="btfecharanking" id="fecharankjogo" onclick="fecharanking();">SAIR RANK</button>
-
 </body>
 </html>

@@ -62,7 +62,7 @@ include_once("includes/banco_de_dados.php");
       }
     }
 
-    xmlhttp.open("GET", "buscaProva.php?tipo=0", true);
+    xmlhttp.open("POST", "buscaProva.php?tipo=0", true);
     xmlhttp.send();
   }
 
@@ -123,7 +123,7 @@ include_once("includes/banco_de_dados.php");
         //this.responseText
       }
     };
-    xmlhttp.open("GET", "buscaProva.php?tipo=1", true);
+    xmlhttp.open("POST", "buscaProva.php?tipo=1", true);
     xmlhttp.send();
 
 

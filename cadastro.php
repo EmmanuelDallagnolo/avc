@@ -23,23 +23,40 @@
   }
 
   </style>
+
+  <!-- <script>
+  function validarsenha(){
+    var Senha1 = document.getElementById('inputsenha').value;
+    var Senha2 = document.getElementById('inputcsenha').value;
+
+    if(Senha1.value != Senha2.value){
+      Senha2.setCustomValidity("Senhas diferentes!");
+    }
+    else {
+     Senha2.setCustomValidity("");
+	}
+  }
+  // password.onchange = validarsenha;
+  // confirm_password.onkeyup = validarsenha;
+  </script> -->
+
 </head>
 <body class="text-center">
   <div class="" id="cadernocadastro">
-    <form class="form-signin" action="includes/verificcadastro.php" method="post">
+    <form class="form-signin" action="includes/verificcadastro.php" method="post" >
       <br>
       <br>
       <h1 class="h1 mb-3 font-weight-normal newFont" id= "caderson" style="color:black;">Cadastro</h1>
       <div class="form-group row" id="nome_cadastro_row">
         <label for="inputnome" id="nome_cadastro" class="col-2  col-form-label newFont">Nome</label>
         <div class="col-10">
-          <input type="text" id="inputnome" class="form-control inputForm" name="inputnome" autofocus>
+          <input type="text" id="inputnome" class="form-control inputForm" name="inputnome" autofocus required>
         </div>
       </div>
       <div class="form-group row" id="sobrenome_cadastro_row">
         <label for="inputsobrenome" id="sobrenome_cadastro" class="col-3 col-form-label newFont">Sobrenome</label>
         <div class="col-9">
-          <input type="text" id="inputsobrenome" class="form-control inputForm" name="inputsobrenome" autofocus>
+          <input type="text" id="inputsobrenome" class="form-control inputForm" name="inputsobrenome" autofocus required>
         </div>
       </div>
       <div class="form-group row" id="sexo_cadastro_row">
@@ -51,7 +68,7 @@
               <label class="form-check-label newFont" for="inlineRadio1">Masculino</label>
             </div>
             <div class="form-check form-check-inline" id="fem_radio">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" >
               <label class="form-check-label newFont" for="inlineRadio2">Feminino</label>
             </div>
           </div>
@@ -60,35 +77,33 @@
       <div class="form-group row" id="usuario_cadastro_row">
         <label for="inputusuario" id="usuario_cadastro" class="col-2 col-form-label newFont">Usuário</label>
         <div class="col-10">
-          <input type="text" id="inputusuario" class="form-control inputForm" name="inputusuario" autofocus>
+          <input type="text" id="inputusuario" class="form-control inputForm" name="inputusuario" autofocus required>
         </div>
       </div>
       <div class="form-group row" id="email_cadastro_row">
         <label for="inputemail" id="email_cadastro" class="col-3 col-form-label newFont">E-mail</label>
         <div class="col-9">
-          <input type="email" id="inputemail" class="form-control inputForm" name="inputemail" autofocus>
+          <input type="email" id="inputemail" class="form-control inputForm" name="inputemail" autofocus required>
         </div>
       </div>
       <div class="form-group row" id= "senha_cadastro_row">
         <label for="inputsenha" id= "senha_cadastro" class="col-2 col-form-label newFont">Senha</label>
         <div class="col-10">
-          <input type="password" id="inputsenha" class="form-control inputForm" name="inputsenha" autofocus>
-        </div>
+          <input type="password" id="inputsenha" class="form-control inputForm" required pattern="[a-z]{6}" placeholder="6 letras" name="inputsenha" onchange="form.inputcsenha.pattern = this.value;">
       </div>
       <div class="form-group row" id="csenha_cadastro_row">
-        <label for="inputcsenha" id= "csenha_cadastro" class="col-5 col-form-label newFont">Confirmar senha</label>
+      <label for="inputcsenha" id= "csenha_cadastro" class="col-5 col-form-label newFont">Confirmar senha</label>
         <div class="col-7 ">
-          <input type="password" id="inputcsenha" class="form-control inputForm" name="inputcsenha" autofocus>
-        </div>
+          <input type="password" id="inputcsenha" class="form-control inputForm" required pattern="[a-z]{6}" placeholder="6 letras" name="inputcsenha" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'As senhas não conferem' : '')">
       </div>
       <div class="form-group row" id="dnasc_cadastro_row">
         <label for="inputdatanasc" id="dnasc_cadastro" class="col-6 col-form-label newFont">Data de nascimento</label>
         <div class="col-6">
-          <input type="date" id="input_datanasc_row" class="form-control inputForm" name="inputdatanasc" autofocus>
+          <input type="date" id="input_datanasc_row" class="form-control inputForm" name="inputdatanasc"  autofocus required>
         </div>
       </div>
       <br>
-      <button id= "botao_cadastrar" class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button><br>
+      <button id= "botao_cadastrar" class="btn btn-lg btn-primary btn-block" type="submit" >Cadastrar</button><br>
       <a href="http://localhost/challenge/index.php" style="color:black;">Já é cadastrado? Faça login aqui!</a>
     </form>
   </div>

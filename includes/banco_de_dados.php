@@ -14,7 +14,7 @@ function select($pQuery){
 		}
 	}
 	else {
-		return 0;
+		return "Nenhum resultado encontrado";
 	}
 
 	mysqli_close($conexao);

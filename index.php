@@ -21,18 +21,21 @@
     background-position: center;
   }
 
+  </style>
+  <?php include_once("ranking.php");
+  //verifica senha login
+  if(isset($_GET["erro"]) && $_GET["erro"] == 1)
+  echo "<script>alert('Usuario ou senha incorreto')</script>";
 
+  ?>
 
+  <script type="text/javascript">
+  function abreranking() {
+    document.getElementById('divranking').style.visibility="visible";
+    document.getElementById('botaosairranking').style.visibility="visible"
+  }
 
-
-</style>
-<?php include_once("ranking.php") ?>
-<script type="text/javascript">
-function abreranking() {
-  document.getElementById('divranking').style.visibility="visible";
-  document.getElementById('botaosairranking').style.visibility="visible"
-}
-</script>
+  </script>
 </head>
 <body class="text-center" >
 
