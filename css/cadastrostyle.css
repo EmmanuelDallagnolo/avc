@@ -33,15 +33,15 @@
 }
 #usuario_cadastro_row{
   margin-left: 25px;
-  margin-top: 65px;
+  margin-top: -2px;
 }
 #email_cadastro_row{
   margin-left: 14px;
-  margin-top: -111px;
+margin-top: -9px;
 }
 #senha_cadastro_row{
   margin-left: 25px;
-  margin-top: 60px;
+  margin-top: -7px;
 }
 #csenha_cadastro_row {
   margin-left: 18px;
@@ -56,7 +56,8 @@
   margin-top: -90px;
 }
 #botao_cadastrar{
-  margin-left: 18px
+margin-left: 40px;
+      margin-top: -13px;
 }
 #masc_radio {
   margin-top: 13px;
@@ -65,5 +66,5 @@
   bottom: -7px;
 }
 #caderson {
-  margin-left: 25px;
+margin-left: 70px;
 }

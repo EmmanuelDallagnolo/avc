@@ -43,10 +43,6 @@ include_once("passounivel.php");
   #backgroundstatus{
     background-image: url("imgs/status.jpg");
   }
-  #iconnotaprova{
-    margin-left: 580px;
-    margin-top: 23px;
-  }
   </style>
   <script>
   function fechacse() {
@@ -57,13 +53,8 @@ include_once("passounivel.php");
     window.location = "http://localhost/challenge/index.php";
   }
   function abrirranking() {
-    document.getElementById('divranking').style.visibility="visible";
-    document.getElementById('fecharankjogo').style.visibility="visible";
-  }
-  function provasnotas(){
-    window.location = "http://localhost/challenge/notasprovas.php";
-    // document.getElementById('divnotasprovas').style.visibility="visible";
-    document.getElementById('fecharprovas').style.visibility="visible";
+  document.getElementById('divranking').style.visibility="visible";
+  document.getElementById('fecharankjogo').style.visibility="visible";
   }
 
   </script>
@@ -71,8 +62,7 @@ include_once("passounivel.php");
 <body>
   <div class=""id="backgroundstatus">
     <img src="imgs/home.png" id="iconhome" onclick="logout();" alt="" />
-    <img src="imgs/ranking.png" id="iconranking" onclick="abrirranking(); "alt="" />
-    <img src="imgs/botaoprovas.png" id="iconnotaprova" onclick="provasnotas(); "alt="" />
+    <img src="imgs/ranking.png" id="iconranking" onclick="abrirranking();"alt="" />
     <h1 class="newFont" id="titulo">A VIDA COBRA OS ESTUDOS</h1>
   </div>
 
