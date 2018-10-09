@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css"/>
@@ -27,7 +25,7 @@
 
 </style>
 <?php
-include_once("ranking.php");
+include_once("includes/ranking.php");
 if(isset($_GET["erro"]) && $_GET["erro"] == 1){
   echo "<script>alert('Usuario ou senha incorreto')</script>";
 }
@@ -48,7 +46,7 @@ function abreranking() {
     <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
     <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-    <a href="cadastro.php" style="color:white;">Ainda não sou cadastrado</a><br>
+    <a href="forms/cadastro.php" style="color:white;">Ainda não sou cadastrado</a><br>
     <img src="imgs/icongold.png" id="rankingopen" onclick="abreranking()">
     <!-- <p class="mt-5 mb-3 text-muted">copelraite 2017-2018</p> -->
   </form>

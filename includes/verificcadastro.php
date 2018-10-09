@@ -21,7 +21,7 @@ if (isset($_POST["inputusuario"])) {
     $cadastrou = php_insert("INSERT INTO jogadores VALUES (DEFAULT,'{$_POST['inputnome']}','{$_POST['inputsobrenome']}','{$_POST['inputusuario']}','$sexo','$data_atual','{$_POST['inputemail']}','{$_POST['inputsenha']}','{$_POST['inputdatanasc']}',1,1,0,0)");
     if ($cadastrou == 1) {
       echo "<script>alert('Cadastrado com sucesso')</script>";
-      header("Location: http://localhost/challenge/index.php");
+      header("Location: ../index.php");
     }else{
       echo "<script>alert('Erro ao cadastrar')</script>";
     }
@@ -33,12 +33,12 @@ if(isset($_POST["email"])){
     if ($value["email"] == $_POST["email"] && $value["senha"] == $_POST["senha"]) {
       $_SESSION["usuario"] = $value;
       if ($_POST["email"] == "emmanueldallagnolo@gmail.com" && $_POST["senha"] == "123") {
-        header("Location: http://localhost/challenge/adminpage.php");
+        header("Location: adminpage.php");
       }else {
         if (($value["nmr_prova"] == 1) && ($value["nivel_prova"] == 1)) {
-          header("Location: http://localhost/challenge/tutorial.php");
+          header("Location: tutorial.php");
         }else{
-          header("Location: http://localhost/challenge/avc.php");
+          header("Location: ../avc.php");
         }
       }/* Redirect browser */
       exit();

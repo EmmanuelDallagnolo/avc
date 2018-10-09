@@ -1,4 +1,4 @@
-function Provacadasradaabrir() {
+function abrirProvaCadastrada() {
   ////////////////////////////////
   //pEsquerda, pDireita, pCima, pBaixo, pPosDestinoX, pPosDestinoY
   this.provascadastradas = [];

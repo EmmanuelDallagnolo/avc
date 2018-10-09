@@ -1,7 +1,7 @@
 <?php
 function select($pQuery){
 
-	$conexao = mysqli_connect("localhost", "root", "", "bd_avc");
+	$conexao = mysqli_connect("localhost", "root", "root", "bd_avc");
 
 	$dados = mysqli_query($conexao, $pQuery) or die("Sua query retornou um erro");
 
@@ -24,7 +24,7 @@ function select($pQuery){
 function php_insert($pQuery){
 
 
-	$conexao = mysqli_connect("localhost", "root", "", "bd_avc");
+	$conexao = mysqli_connect("localhost", "root", "root", "bd_avc");
 
 	$dados = mysqli_query($conexao,$pQuery) or die("Error ao realizar o insert");
 
@@ -34,7 +34,7 @@ function php_insert($pQuery){
 }
 function sql_delete_update($pQuery){
 
-	$conexao = mysqli_connect("localhost", "root", "", "bd_avc");
+	$conexao = mysqli_connect("localhost", "root", "root", "bd_avc");
 
 	$dados = mysqli_query($conexao,$pQuery) or die("erro ao executar a query");
 

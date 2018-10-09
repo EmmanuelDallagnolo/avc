@@ -3,11 +3,11 @@ window.onload = function(){
 	var cnv =document.getElementById("tela");
 	var	ctx = cnv.getContext("2d");
 	var spriteSheet = new Image();
-	spriteSheet.src = "imgs/imgmasc.png";
+	spriteSheet.src = "../imgs/imgmasc.png";
 	var jogador = new Jogador(spriteSheet);
 	var camera = new Camera(cnv);
 	var scene = new Image();
-	scene.src = "imgs/cenatotal.png";
+	scene.src = "../imgs/cenatotal.png";
 	jogador.speed = 8;
 
 	this.sprites = [];
