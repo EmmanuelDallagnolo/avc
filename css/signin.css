@@ -1,4 +1,3 @@
-
 body {
   height: 100%;
   display: -ms-flexbox;
@@ -16,8 +15,16 @@ body {
   padding: 15px;
   margin: auto;
   padding-left: 54px;
-margin-left: 609px;
+  margin-left: 609px;
   margin-top: 39px;
+  text-align: center;
+  margin: auto;
+
+    background-image: url("../imgs/cadernologin.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+
 }
 
 

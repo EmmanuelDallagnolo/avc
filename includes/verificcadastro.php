@@ -33,7 +33,7 @@ if(isset($_POST["email"])){
     if ($value["email"] == $_POST["email"] && $value["senha"] == $_POST["senha"]) {
       $_SESSION["usuario"] = $value;
       if ($_POST["email"] == "emmanueldallagnolo@gmail.com" && $_POST["senha"] == "123") {
-        header("Location: adminpage.php");
+        header("Location: ../pages/adminpage.php");
       }else {
         if (($value["nmr_prova"] == 1) && ($value["nivel_prova"] == 1)) {
           header("Location: tutorial.php");
