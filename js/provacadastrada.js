@@ -10,8 +10,9 @@ function funcaoprovacadastrada(jogador){
   for (var i in provascadastradas){
     var avccse = provascadastradas[i];
     if ((jogador.posX > avccse.esquerda && jogador.posX < avccse.direita) && (jogador.posY > avccse.cima && jogador.posY < avccse.baixo)) {
-      var r = confirm("Realizar prova!!!");
-      if (r == true) {
+      var c = confirm("Realizar prova!!!");
+      if (c == true) {
+        debugger;
         document.getElementById("codigoprovabotao").style.visibility = "visible";
         document.getElementById("codigoprova").style.visibility = "visible";
         document.getElementById("provacadastrada").style.visibility="visible";

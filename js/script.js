@@ -31,6 +31,7 @@ window.onload = function(){
 	paredes();
 	Cseabrir();
 	Provaabrir();
+	abrirProvaCadastrada();
 
 	window.addEventListener("keydown",keydownHandler,false);
 	window.addEventListener("keyup",keyupHandler,false);
@@ -109,7 +110,7 @@ window.onload = function(){
 		teleportajogador(jogador,1126,672);
 		funcaocse(jogador);
 		funcaoprova(jogador);
-		//	paredecolide();
+		funcaoprovacadastrada(jogador);
 	}
 
 

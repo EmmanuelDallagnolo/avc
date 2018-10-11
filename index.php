@@ -25,7 +25,7 @@
 
 </style>
 <?php
-include_once("includes/ranking.php");
+include_once("pages/ranking.php");
 if(isset($_GET["erro"]) && $_GET["erro"] == 1){
   echo "<script>alert('Usuario ou senha incorreto')</script>";
 }

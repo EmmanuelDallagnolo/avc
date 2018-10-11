@@ -5,6 +5,7 @@ include_once("ranking.php");
 include_once("montaprova.php");
 include_once("csebody.php");
 include_once("../includes/passounivel.php");
+include_once("montaprovascadastradas.php");
 ?>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@ include_once("../includes/passounivel.php");
   <link rel="stylesheet" type="text/css" href="../css/passounivelstyle.css"/>
   <link rel="stylesheet" type="text/css" href="../css/mostraprovastyle.css"/>
   <link rel="stylesheet" type="text/css" href="../css/jogostyle.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/provacadastradastyle.css"/>
   <link rel="icon" href="../imgs/logo_jDA_icon.ico">
   <script src="../js/jquery.js"></script>
   <script src="../js/ajax.js"></script>
@@ -33,6 +35,7 @@ include_once("../includes/passounivel.php");
   <script src="../js/camera.js"></script>
   <script src="../js/csegoogle.js"></script>
   <script src="../js/prova.js"></script>
+  <script src="../js/provacadastrada.js"></script>
 
 
   <style media="screen">

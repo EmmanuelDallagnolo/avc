@@ -38,7 +38,7 @@ if(isset($_POST["email"])){
         if (($value["nmr_prova"] == 1) && ($value["nivel_prova"] == 1)) {
           header("Location: tutorial.php");
         }else{
-          header("Location: ../avc.php");
+          header("Location: ../pages/avc.php");
         }
       }/* Redirect browser */
       exit();
