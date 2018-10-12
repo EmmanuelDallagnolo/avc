@@ -56,36 +56,36 @@ include_once("../includes/banco_de_dados.php");
         $arrayQuestoescadastradas = JSON.parse(this.responseText);
 
 
-        var form = '<form id="questionario" name ="questionario" method="POST" style="color:white;">';
-        form += arrayProvacadastrada[0].nome + '<br>';
+        var form = '<form id="questionario" name ="questionario" method="POST" style="color:black;">';
+        form += '<h1>' + arrayProvacadastrada[0].nome + '</h1><br>';
         for(var i = 0; i < $arrayQuestoescadastradas.length; i++){
 
-          form += '<xmp> ' + $arrayQuestoescadastradas[i].enunciado + ' </xmp> <br>';
+          form += '<xmp class="alinhamentoTexto"> ' + $arrayQuestoescadastradas[i].enunciado + ' </xmp> <br>';
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + $arrayQuestoescadastradas[i].id + '" id="aa" value="a" required >';
           form += '<label class="form-check-label" for="aa">';
-          form += '<xmp>A) '  + $arrayQuestoescadastradas[i].alternativa_a + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">A) '  + $arrayQuestoescadastradas[i].alternativa_a + ' </xmp>';
           form += '</label>';
           form += '</div>';
 
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + $arrayQuestoescadastradas[i].id + '" id="bb" value="b" required >';
           form += '<label class="form-check-label" for="bb">';
-          form += '<xmp>B) '  + $arrayQuestoescadastradas[i].alternativa_b + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">B) '  + $arrayQuestoescadastradas[i].alternativa_b + ' </xmp>';
           form += '</label>';
           form += '</div>';
 
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + $arrayQuestoescadastradas[i].id + '" id="cc" value="c" required >';
           form += '<label class="form-check-label" for="cc">';
-          form += '<xmp>C) '  + $arrayQuestoescadastradas[i].alternativa_c + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">C) '  + $arrayQuestoescadastradas[i].alternativa_c + ' </xmp>';
           form += '</label>';
           form += '</div>';
 
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + $arrayQuestoescadastradas[i].id + '" id="dd" value="d" required >';
           form += '<label class="form-check-label" for="dd">';
-          form += '<xmp>D) '  + $arrayQuestoescadastradas[i].alternativa_d + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">D) '  + $arrayQuestoescadastradas[i].alternativa_d + ' </xmp>';
           form += '</label>';
           form += '</div>';
 

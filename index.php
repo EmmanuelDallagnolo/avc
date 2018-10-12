@@ -34,7 +34,7 @@ function abreranking() {
 </head>
 <body class="text-center" >
 
-
+  
   <form class="form-signin" id="agoravai" method="post" action="includes/verificcadastro.php">
     <img class="mb-4" src="imgs/logo.png" alt="" width="150" height="180">
     <h1 class="h1 mb-3 font-weight-normal newFont" style="color:white;">A vida cobra os estudos</h1>

@@ -74,32 +74,32 @@ include_once("../includes/banco_de_dados.php");
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         arrayQuestoes = JSON.parse(this.responseText);
-        var form = '<form id="questionario" name ="questionario" method="POST" style="color:white;">';
-        form += arrayProva[0].nome + '<br>';
+        var form = '<form id="questionario" name ="questionario" method="POST" style="color:black;">';
+        form += '<h1>' + arrayProva[0].nome + '</h1><br>';
         for(var i = 0; i < arrayQuestoes.length; i++){
-          form += '<xmp> '  + arrayQuestoes[i].enunciado + ' </xmp> <br>';
+          form += '<xmp class="alinhamentoTexto" > '  + arrayQuestoes[i].enunciado + ' </xmp> <br>';
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + arrayQuestoes[i].id + '" id="aa" value="a" required >';
           form += '<label class="form-check-label" for="aa">';
-          form += '<xmp>A) '  + arrayQuestoes[i].alternativa_a + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">A) '  + arrayQuestoes[i].alternativa_a + ' </xmp>';
           form += '</label>';
           form += '</div>';
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + arrayQuestoes[i].id + '" id="bb" value="b" required >';
           form += '<label class="form-check-label" for="bb">';
-          form += '<xmp>B) '  + arrayQuestoes[i].alternativa_b + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">B) '  + arrayQuestoes[i].alternativa_b + ' </xmp>';
           form += '</label>';
           form += '</div>';
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + arrayQuestoes[i].id + '" id="cc" value="c" required >';
           form += '<label class="form-check-label" for="cc">';
-          form += '<xmp>C) '  + arrayQuestoes[i].alternativa_c + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">C) '  + arrayQuestoes[i].alternativa_c + ' </xmp>';
           form += '</label>';
           form += '</div>';
           form += '<div class="form-check">';
           form += '<input class="form-check-input" type="radio" name="provaradio_'  + arrayQuestoes[i].id + '" id="dd" value="d" required >';
           form += '<label class="form-check-label" for="dd">';
-          form += '<xmp>D) '  + arrayQuestoes[i].alternativa_d + ' </xmp>';
+          form += '<xmp id="alternativas" class="alinhamentoTexto">D) '  + arrayQuestoes[i].alternativa_d + ' </xmp>';
           form += '</label>';
           form += '</div>';
         }

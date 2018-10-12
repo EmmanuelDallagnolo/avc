@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../css/inseriprovastyle.css"/>
   <script src="../js/bootstrap/bootstrap.js"></script>
   <?php
+  session_start();
   include_once("../includes/banco_de_dados.php");
   $codigo = 0;
   if (isset($_POST['assuntoprova']) && isset($_POST['qtd_questoes'])) {
