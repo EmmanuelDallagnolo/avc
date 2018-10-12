@@ -15,7 +15,7 @@
   }
   </style>
   <?php
-  include_once('/banco_de_dados.php');
+  include_once('../includes/banco_de_dados.php');
 
   if (isset($_POST['pesquisajog']) && $_POST['pesquisajog'] != "") {
     $jogadores = select("SELECT * FROM `jogadores` WHERE usuario = '{$_POST['pesquisajog']}'");
@@ -65,7 +65,7 @@
       document.getElementById('pageadminjogadores').innerHTML = form;
 
     }
-    
+
     function alteradados(input){debugger;
       var id = input.parentElement.parentElement.id;
       var valor = input.value;
@@ -78,7 +78,7 @@
         }
       }
 
-      xmlhttp.open("GET", "atualizaJogadores.php?id="+id+"&valor="+valor+"&nomeInput="+nomeInput, true);
+      xmlhttp.open("GET", "../includes/atualizaJogadores.php?id="+id+"&valor="+valor+"&nomeInput="+nomeInput, true);
       xmlhttp.send();
     }
     </script>

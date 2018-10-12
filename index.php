@@ -12,19 +12,7 @@
   <meta name="description" content="pagina de jogo online">
   <meta name="author" content="senaigames">
   <title>Login</title>
-  <style media="screen">
-  body {
-    background-image: url("imgs/cadernologin.png");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-
-
-
-
-</style>
-<?php
+  <?php
 include_once("pages/ranking.php");
 if(isset($_GET["erro"]) && $_GET["erro"] == 1){
   echo "<script>alert('Usuario ou senha incorreto')</script>";
@@ -36,6 +24,13 @@ function abreranking() {
   document.getElementById('botaosairranking').style.visibility="visible"
 }
 </script>
+<style media="screen">
+  body{
+    background-image: url("imgs/cadernologin.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
 </head>
 <body class="text-center" >
 
