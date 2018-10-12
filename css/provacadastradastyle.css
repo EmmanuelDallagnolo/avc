@@ -3,7 +3,7 @@
   position: fixed;
   height: 600px;
   width: 800px;
-  background-color: black;
+  background-color: white;
   margin-left: 400px;
   margin-top: 100px;
   overflow: auto;
@@ -17,4 +17,13 @@
 }
 #codigoprovabotao{
   visibility: hidden;
+}
+.alinhamentoTexto{
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: initial;
+  width: 751px;
+}
+#alternativas{
+  border-bottom:1px solid #000;
 }

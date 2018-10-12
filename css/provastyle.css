@@ -3,18 +3,24 @@
   position: fixed;
   height: 600px;
   width: 800px;
-  background-color: black;
+  background-color: white;
   margin-left: 400px;
   margin-top: 100px;
   overflow: auto;
-
   padding-left: 25px;
-      top: 0px;
-
+  top: 0px;
 }
-
 #finalizaprova{
   float: right;
   margin-right: 25px;
   margin-bottom: 15px;
+}
+#alternativas{
+  border-bottom:1px solid #000;
+}
+.alinhamentoTexto{
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: initial;
+  width: 751px;
 }
