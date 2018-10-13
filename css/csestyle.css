@@ -15,9 +15,11 @@
   background-position: center;
   width: 800px;
   height: 600px;
-      top: 0px;
-
+  top: 0px;
 }
 #botaocse{
   float: right;
+  width: 20px;
+  color: red;
+  background-color: gray;
 }

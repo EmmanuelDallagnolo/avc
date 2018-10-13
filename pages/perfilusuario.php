@@ -46,7 +46,7 @@
     form+=  '<td id="titulos"><?php echo $_SESSION['usuario']['data_cadastro'] ?></td>'
     form+=  '<td><input type="text" name="email" onfocusout="alteradados(this)" value="<?php echo $_SESSION['usuario']['email'] ?>"></td>'
     form+=  '<td id="titulos" ><?php echo $_SESSION['usuario']['data_nasci'] ?></td>'
-    form+=  '<td id="pontuacao"><input type="text"  name="pontuacao" onfocusout="alteradados(this)" style="width:50px;" value="<?php echo $_SESSION['usuario']['pontuacao'] ?>"></td>'
+    form+=  '<td id="pontuacao"><?php echo $_SESSION['usuario']['pontuacao'] ?></td>'
     form+=  '</tr>'
     form+= '</table>'
     form+= '</form>'

@@ -9,6 +9,7 @@ include_once("../includes/banco_de_dados.php");
   <title></title>
   <script>
   function submitProvacadastrada(){
+    debugger;
     var xmlhttp = new XMLHttpRequest();
 
     var formElement = document.forms[0];

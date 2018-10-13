@@ -6,6 +6,7 @@ include_once("montaprova.php");
 include_once("csebody.php");
 include_once("../includes/passounivel.php");
 include_once("montaprovascadastradas.php");
+include_once("divinformacoes.php");
 ?>
 <html lang="en">
 <head>

@@ -1,0 +1,21 @@
+#divinformacoes{
+  background-image: url("../imgs/fundodivinformacoes.png");
+  width: 285px;
+  height: 233px;
+  margin-top: -285px;
+  margin-left: 113px;
+  color: white;
+  padding: 35px;
+}
+#DIusuario{
+  font-size: 20px;
+}
+#DIpontuacao{
+  font-size: 20px;
+}
+#DIfase{
+  font-size: 20px;
+}
+#DIprova{
+  font-size: 20px;
+}

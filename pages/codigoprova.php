@@ -5,7 +5,7 @@
   <title></title>
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css"/>
-  <link rel="stylesheet" type="text/css" href="../css/inseriprovastyle.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/inserirprovastyle.css"/>
   <script src="../js/bootstrap/bootstrap.js"></script>
   <?php
   session_start();

@@ -34,7 +34,7 @@ function abreranking() {
 </head>
 <body class="text-center" >
 
-  
+
   <form class="form-signin" id="agoravai" method="post" action="includes/verificcadastro.php">
     <img class="mb-4" src="imgs/logo.png" alt="" width="150" height="180">
     <h1 class="h1 mb-3 font-weight-normal newFont" style="color:white;">A vida cobra os estudos</h1>
@@ -44,6 +44,24 @@ function abreranking() {
     <a href="forms/cadastro.php" style="color:white;">Ainda não sou cadastrado</a><br>
     <img src="imgs/icongold.png" id="rankingopen" onclick="abreranking()">
     <!-- <p class="mt-5 mb-3 text-muted">copelraite 2017-2018</p> -->
+    <footer>
+
+    <h4><a href="../avc/pages/quemsomos.php">Quem somos?</a></h4>
+
+    <a href="https://www.facebook.com/A-vida-cobra-os-estudos-338624603571921/" target="_blank">
+    <img src="imgs/logoface.png">
+    </a>
+
+    <a href="https://www.instagram.com/avcgamechallenge/" target="_blank">
+    <img src="imgs/logoinstagram.png">
+    </a>
+
+    <a href="https://twitter.com/a_estudos?lang=en" target="_blank">
+    <img src="imgs/twitterlogo.png">
+    </a>
+
+  </footer>
   </form>
+
 </body>
 </html>
