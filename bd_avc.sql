@@ -18,13 +18,9 @@ SET time_zone = "+00:00";
 CREATE DATABASE bd_avc;
 USE bd_avc;
 --
--- Banco de dados: `bd_avc`
---
-
--- --------------------------------------------------------
 
 --
--- Estrutura para tabela `jogadores`
+-- Estrutura da tabela `jogadores`
 --
 
 CREATE TABLE `jogadores` (
@@ -44,18 +40,18 @@ CREATE TABLE `jogadores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela dos jogadores';
 
 --
--- Fazendo dump de dados para tabela `jogadores`
+-- Extraindo dados da tabela `jogadores`
 --
 
 INSERT INTO `jogadores` (`id`, `nome`, `sobrenome`, `usuario`, `avatar`, `data_cadastro`, `email`, `senha`, `data_nasci`, `nivel_prova`, `nmr_prova`, `pontuacao`, `provas_feitas`) VALUES
-(1, 'emmanuel', 'dallagnolo', 'nuel', '0', '2018-08-24 03:19:03', 'emmanueldallagnolo@gmail.com', '123', '2018-08-08', 1, 3, '2.00', 2),
-(2, 'andre', 'bitencourt', 'velho', '0', '2018-08-24 03:19:49', 'andre@gmail.com', '123', '1945-08-08', 1, 4, '0.00', 1),
+(1, 'emmanuel', 'dallagnolo', 'nuel', '0', '2018-08-24 03:19:03', 'emmanueldallagnolo@gmail.com', '123', '2018-08-08', 1, 3, '99.99', 2),
+(2, 'andre', 'bitencourt', 'velho', '0', '2018-08-24 03:19:49', 'andre@gmail.com', '123', '1945-08-08', 1, 4, '99.99', 1),
 (4, 'guilherme', 'lins', 'gordinho fibrado', '0', '2018-09-08 01:56:01', 'guilhermelins@gmail.com', '123', '2018-03-12', 1, 1, '1.00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `jogadores_has_questoes`
+-- Estrutura da tabela `jogadores_has_questoes`
 --
 
 CREATE TABLE `jogadores_has_questoes` (
@@ -67,18 +63,27 @@ CREATE TABLE `jogadores_has_questoes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `jogadores_has_questoes_cadastradas`
+-- Estrutura da tabela `jogadores_has_questoes_cadastradas`
 --
 
 CREATE TABLE `jogadores_has_questoes_cadastradas` (
   `jogadores_id` int(10) UNSIGNED NOT NULL,
-  `questoes_cadastradas_id` int(11) NOT NULL
+  `questoes_cadastradas_id` int(11) NOT NULL,
+  `resposta` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `jogadores_has_questoes_cadastradas`
+--
+
+INSERT INTO `jogadores_has_questoes_cadastradas` (`jogadores_id`, `questoes_cadastradas_id`, `resposta`) VALUES
+(2, 1, ''),
+(2, 2, '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `logs`
+-- Estrutura da tabela `logs`
 --
 
 CREATE TABLE `logs` (
@@ -90,7 +95,7 @@ CREATE TABLE `logs` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `niveis`
+-- Estrutura da tabela `niveis`
 --
 
 CREATE TABLE `niveis` (
@@ -99,7 +104,7 @@ CREATE TABLE `niveis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela de níveis';
 
 --
--- Fazendo dump de dados para tabela `niveis`
+-- Extraindo dados da tabela `niveis`
 --
 
 INSERT INTO `niveis` (`id`, `nome`) VALUES
@@ -109,11 +114,7 @@ INSERT INTO `niveis` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `provas`
+-- Estrutura da tabela `provas`
 --
 
 CREATE TABLE `provas` (
@@ -124,7 +125,7 @@ CREATE TABLE `provas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela de provas';
 
 --
--- Fazendo dump de dados para tabela `provas`
+-- Extraindo dados da tabela `provas`
 --
 
 INSERT INTO `provas` (`id`, `temas_id`, `niveis_id`, `nome`) VALUES
@@ -138,7 +139,7 @@ INSERT INTO `provas` (`id`, `temas_id`, `niveis_id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `provas_cadastradas`
+-- Estrutura da tabela `provas_cadastradas`
 --
 
 CREATE TABLE `provas_cadastradas` (
@@ -147,16 +148,18 @@ CREATE TABLE `provas_cadastradas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `provas_cadastradas`
+-- Extraindo dados da tabela `provas_cadastradas`
 --
 
 INSERT INTO `provas_cadastradas` (`id`, `nome`) VALUES
-(24005, 'Andre');
+(0, 'AndrÃ©'),
+(24005, 'Andre'),
+(1527185633, 'ty');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `questoes`
+-- Estrutura da tabela `questoes`
 --
 
 CREATE TABLE `questoes` (
@@ -172,60 +175,60 @@ CREATE TABLE `questoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela das questões';
 
 --
--- Fazendo dump de dados para tabela `questoes`
+-- Extraindo dados da tabela `questoes`
 --
 
 INSERT INTO `questoes` (`enunciado`, `id`, `alternativa_a`, `alternativa_b`, `alternativa_c`, `alternativa_d`, `correta`, `peso`, `provas_id`) VALUES
 ('O que significa HTML?', 1, 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language', 'Hyper Text Markup Language', 'hyper Tool and Text Markup Language', 'C', 1, 1),
 ('Escolha o elemento HTML correto para o maior cabeçalho?', 2, '<head>', '<heading>', '<h1>', '<h6>', 'C', 1, 1),
 ('Qual é o elemento HTML correto para inserir uma quebra de linha??', 3, '<br>', '<break>', '<lb>', '<div>', 'A', 1, 1),
-('Qual é o HTML correto para adicionar uma cor de plano de fundo?', 4, '<body style="background-color:yellow;">', '<body bg="yellow">', '<background>yellow</background>', '<background color="yellow">', 'A', 1, 1),
+('Qual é o HTML correto para adicionar uma cor de plano de fundo?', 4, '<body style=\"background-color:yellow;\">', '<body bg=\"yellow\">', '<background>yellow</background>', '<background color=\"yellow\">', 'A', 1, 1),
 ('Escolha o elemento HTML correto para definir o texto importante:', 5, '<important>', '<i>', '<b>', '<strong>', 'D', 1, 1),
 ('Escolha o elemento HTML correto para definir o texto enfatizado:', 6, '<italic>', '<i>', '<em>', '<br>', 'C', 1, 1),
 ('Qual caractere é usado para indicar uma tag final?', 7, '<', '*', '^', '/', 'D', 1, 1),
-('Como você pode abrir um link em uma nova aba / janela do navegador?', 8, '<a href="url" new>', '<a href="url" target="_blank">', '<a href="url" target="new">', '<a href="url" new ="url">', 'B', 1, 1),
+('Como você pode abrir um link em uma nova aba / janela do navegador?', 8, '<a href=\"url\" new>', '<a href=\"url\" target=\"_blank\">', '<a href=\"url\" target=\"new\">', '<a href=\"url\" new =\"url\">', 'B', 1, 1),
 ('Quais desses elementos são todos os elementos <table>?', 9, '<table><tr><td>', '<table><head><tfoot>', '<thead><body><tr>', '<table><tr><tt>', 'D', 1, 1),
 ('Como você pode fazer uma lista numerada?', 10, '<ul>', '<list>', '<ol>', '<dl>', 'C', 1, 1),
 ('O que significa o PHP?', 11, 'Hypertext Preprocessor', 'Personal Hypertext Processor', 'Private Home Page', 'Prototype hypertext page', 'A', 1, 2),
 ('Quais os delimitadores que cercam os scripts do PHP?', 12, '<?php>...</?>', '<?php...?>', '<script>...</script>', '<&>...</&>', 'B', 1, 2),
-('Como você escreve "Hello World" em PHP?', 13, '"Hello World";', 'Document.Write("Hello World");', 'echo "Hello World";', '<"Hello World">;', 'C', 1, 2),
+('Como você escreve \"Hello World\" em PHP?', 13, '\"Hello World\";', 'Document.Write(\"Hello World\");', 'echo \"Hello World\";', '<\"Hello World\">;', 'C', 1, 2),
 ('Todas as variáveis no PHP começam com qual símbolo?', 14, '&', '!', '$', '#', 'C', 1, 2),
 ('Qual é a maneira correta de terminar uma instrução PHP?', 15, '.', 'New line', ';', '</php>', 'C', 1, 2),
-('Como você obtém informações de um formulário que é enviado usando o método "get"?', 16, 'Request.Form;', 'Request.QueryString;', '$_GET[];', '<$_GET>', 'C', 1, 2),
+('Como você obtém informações de um formulário que é enviado usando o método \"get\"?', 16, 'Request.Form;', 'Request.QueryString;', '$_GET[];', '<$_GET>', 'C', 1, 2),
 ('Qual é a maneira correta de se conectar a um banco de dados MySQL?', 17, 'mysql_select_db();', 'mysql_connect();', 'connect();', 'connect_db();', 'B', 1, 2),
 ('Qual é a maneira correta de criar uma função em PHP?', 18, 'Function_Myfunction();', 'Myfunction()', 'Create_function();', 'Function Myfunction();', 'D', 1, 2),
 ('A sintaxe do PHP é mais semelhante a:', 19, 'Java Script', 'C & perl', 'ASP', 'Asp.net', 'B', 1, 2),
-('Qual é a maneira correta de abrir o arquivo "time.txt" como legível?', 20, 'open("time.txt");', 'open_file(“time.txt”);', 'fopen(“time.txt”,”r”);', 'fopen(“time.txt”);', 'C', 1, 2),
+('Qual é a maneira correta de abrir o arquivo \"time.txt\" como legível?', 20, 'open(\"time.txt\");', 'open_file(“time.txt”);', 'fopen(“time.txt”,”r”);', 'fopen(“time.txt”);', 'C', 1, 2),
 ('O que significa o CSS?', 21, 'Creative Style Sheets', 'Cascading Style Sheets', 'Colorful Style Sheets', 'Computer Style Sheets', 'B', 1, 3),
-('Qual é o HTML correto para se referir a uma folha de estilos externa?', 22, '<stylesheet>mystyle.css</stylesheet>', '<link rel="stylesheet"type="text/css" href="mystyle.css">', '<style src="mystyle.css">', '<link src="mystyle.css">', 'B', 1, 3),
+('Qual é o HTML correto para se referir a uma folha de estilos externa?', 22, '<stylesheet>mystyle.css</stylesheet>', '<link rel=\"stylesheet\"type=\"text/css\" href=\"mystyle.css\">', '<style src=\"mystyle.css\">', '<link src=\"mystyle.css\">', 'B', 1, 3),
 ('Qual tag HTML é usada para definir uma folha de estilo interna?', 23, '<css>', '<script>', '<style>', '<stylesheet>', 'C', 1, 3),
 ('Qual atributo HTML é usado para definir estilos embutidos?', 24, 'font', 'styles', 'style', 'class', 'C', 1, 3),
 ('Qual é a sintaxe CSS correta?', 25, 'body {color: black}', 'body:color=black;', '{body;color:black;}', '{body:color=black;}', 'A', 1, 3),
-('Como você insere um comentário em um arquivo CSS?', 26, '// this is a comment', '''this is a comment', '/*this is a comment*/', '//this is a comment//', 'C', 1, 3),
+('Como você insere um comentário em um arquivo CSS?', 26, '// this is a comment', '\'this is a comment', '/*this is a comment*/', '//this is a comment//', 'C', 1, 3),
 ('Qual propriedade é usada para alterar a cor do plano de fundo?', 27, 'color', 'background-color', 'bgcolor', 'background-collor', 'B', 1, 3),
 ('Como você adiciona uma cor de fundo para todos os elementos <h1>?', 28, 'h1 {background-color:#FFFFFF;}', 'all.h1 {background-color:#FFFFFF;}', 'h1.all {background-color:#FFFFFF;}', 'h1({background-color:#FFFFFF;})', 'B', 1, 3),
 ('Qual propriedade CSS é usada para alterar a cor do texto de um elemento?', 29, 'text-color', 'color', 'fgcolor', 'color_text', 'B', 1, 3),
 ('Qual propriedade CSS controla o tamanho do texto?', 30, 'text-size', 'font-size', 'text-style', 'font-style', 'B', 1, 3),
 ('Dentro de qual elemento HTML colocamos o JavaScript?', 31, '<js>', '<scripting>', '<script>', '<javascript>', 'C', 1, 4),
-('Qual é a sintaxe correta do JavaScript para alterar o conteúdo do elemento HTML?  <p id="demo">This is a demonstration.</p>', 32, 'document.getElementById("demo").innerHTML = "Hello World!";', '#demo.innerHTML = "Hello World!";', 'document.getElement("p").innerHTML = "Hello World!";', 'document.getElementByName("p").innerHTML = "Hello World!";', 'A', 1, 4),
+('Qual é a sintaxe correta do JavaScript para alterar o conteúdo do elemento HTML?  <p id=\"demo\">This is a demonstration.</p>', 32, 'document.getElementById(\"demo\").innerHTML = \"Hello World!\";', '#demo.innerHTML = \"Hello World!\";', 'document.getElement(\"p\").innerHTML = \"Hello World!\";', 'document.getElementByName(\"p\").innerHTML = \"Hello World!\";', 'A', 1, 4),
 ('Onde é o lugar correto para inserir um JavaScript?', 33, 'The <head> section', 'Both the <head> section and the <body> section are correct', 'The <body> section', 'None of these', 'B', 1, 4),
-('Qual é a sintaxe correta para se referir a um script externo chamado "xxx.js"?', 34, '<script src="xxx.js">', '<script href="xxx.js">', '<script name="xxx.js">', 'none of these', 'A', 1, 4),
-('Como você escreve "Hello World" em uma caixa de alerta?', 35, 'msg("Hello World");', 'alertBox("Hello World");', 'msgBox("Hello World");', 'alert("Hello World");', 'D', 1, 4),
+('Qual é a sintaxe correta para se referir a um script externo chamado \"xxx.js\"?', 34, '<script src=\"xxx.js\">', '<script href=\"xxx.js\">', '<script name=\"xxx.js\">', 'none of these', 'A', 1, 4),
+('Como você escreve \"Hello World\" em uma caixa de alerta?', 35, 'msg(\"Hello World\");', 'alertBox(\"Hello World\");', 'msgBox(\"Hello World\");', 'alert(\"Hello World\");', 'D', 1, 4),
 ('Como você cria uma função em JavaScript?', 36, 'function myFunction()', 'function = myFunction()', 'function:myFunction()', 'function::myFunction()', 'A', 1, 4),
-('Como você chama uma função chamada "myFunction"?', 37, 'myFunction()', 'call function myFunction()', 'call myFunction()', 'go myFunction()', 'A', 1, 4),
+('Como você chama uma função chamada \"myFunction\"?', 37, 'myFunction()', 'call function myFunction()', 'call myFunction()', 'go myFunction()', 'A', 1, 4),
 ('Como escrever uma instrução IF em JavaScript?', 38, 'if i == 5 then', 'if i = 5', 'if (i == 5)', 'if i = 5 then', 'C', 1, 4),
-('Como escrever uma instrução IF para executar algum código se "i" não for igual a 5?', 39, 'if i <> 5', 'if i =! 5 then', 'if (i != 5)', 'if (i <> 5)', 'C', 1, 4),
+('Como escrever uma instrução IF para executar algum código se \"i\" não for igual a 5?', 39, 'if i <> 5', 'if i =! 5 then', 'if (i != 5)', 'if (i <> 5)', 'C', 1, 4),
 ('Como um loop FOR inicia?', 40, 'for (i = 0; i <= 5; i++) ', 'for (i <= 5; i++)', 'for i = 1 to 5', 'for (i = 0; i <= 5)', 'A', 1, 4),
 ('O que significa o SQL?', 41, 'Strong Question Language', 'Structured Query Language', 'Structured Question Language', 'Strong Question Language', 'B', 1, 5),
-('Com o SQL, como você seleciona todos os registros de uma tabela chamada \\"Pessoas\\", onde o valor da coluna "Nome" começa com \\"a\\"?', 42, 'SELECT * FROM Persons WHERE FirstName=''%a%''', 'SELECT * FROM Persons WHERE FirstName LIKE ''a%''', 'SELECT * FROM Persons WHERE FirstName LIKE ''%a''', 'SELECT * FROM Persons WHERE FirstName=''a''', 'B', 1, 5),
-('Com o SQL, como você seleciona todos os registros de uma tabela chamada "Pessoas" onde o "Nome" é "Peter" e o "Sobrenome" é "Jackson"?', 43, 'SELECT * FROM Persons WHERE FirstName=''Peter'' AND LastName=''Jackson''', 'SELECT * FROM Persons WHERE FirstName<>''Peter'' AND LastName<>''Jackson''', 'SELECT FirstName=''Peter'', LastName=''Jackson'' FROM Persons', 'SELECT firstName=''Peter'', LastName=''Jackson'' FROM name', 'A', 1, 5),
-('Com o SQL, como você seleciona todos os registros de uma tabela chamada "Pessoas" onde o "Sobrenome" está em ordem alfabética entre (e incluindo) "Hansen" e "Pettersen"?', 44, 'SELECT * FROM Persons WHERE LastName BETWEEN ''Hansen'' AND ''Pettersen''', 'SELECT LastName>''Hansen'' AND LastName<''Pettersen'' FROM Persons', 'SELECT * FROM Persons WHERE LastName>''Hansen'' AND LastName<''Pettersen''', 'SELECT LastName>''Hansen'' && LastName<''Pettersen'' FROM Persons', 'A', 1, 5),
+('Com o SQL, como você seleciona todos os registros de uma tabela chamada \\\"Pessoas\\\", onde o valor da coluna \"Nome\" começa com \\\"a\\\"?', 42, 'SELECT * FROM Persons WHERE FirstName=\'%a%\'', 'SELECT * FROM Persons WHERE FirstName LIKE \'a%\'', 'SELECT * FROM Persons WHERE FirstName LIKE \'%a\'', 'SELECT * FROM Persons WHERE FirstName=\'a\'', 'B', 1, 5),
+('Com o SQL, como você seleciona todos os registros de uma tabela chamada \"Pessoas\" onde o \"Nome\" é \"Peter\" e o \"Sobrenome\" é \"Jackson\"?', 43, 'SELECT * FROM Persons WHERE FirstName=\'Peter\' AND LastName=\'Jackson\'', 'SELECT * FROM Persons WHERE FirstName<>\'Peter\' AND LastName<>\'Jackson\'', 'SELECT FirstName=\'Peter\', LastName=\'Jackson\' FROM Persons', 'SELECT firstName=\'Peter\', LastName=\'Jackson\' FROM name', 'A', 1, 5),
+('Com o SQL, como você seleciona todos os registros de uma tabela chamada \"Pessoas\" onde o \"Sobrenome\" está em ordem alfabética entre (e incluindo) \"Hansen\" e \"Pettersen\"?', 44, 'SELECT * FROM Persons WHERE LastName BETWEEN \'Hansen\' AND \'Pettersen\'', 'SELECT LastName>\'Hansen\' AND LastName<\'Pettersen\' FROM Persons', 'SELECT * FROM Persons WHERE LastName>\'Hansen\' AND LastName<\'Pettersen\'', 'SELECT LastName>\'Hansen\' && LastName<\'Pettersen\' FROM Persons', 'A', 1, 5),
 ('Qual instrução SQL é usada para retornar apenas valores diferentes?', 45, 'SELECT FROM', 'SELECT DIFFERENT', 'SELECT UNIQUE', 'SELECT DISTINCT', 'D', 1, 5),
-('Com o SQL, como você pode retornar todos os registros de uma tabela chamada "Pessoas" ordenada descendente por "Nome"?', 46, 'SELECT * FROM Persons ORDER FirstName DESC', 'SELECT * FROM Persons SORT ''FirstName'' DESC', 'SELECT * FROM Persons ORDER BY FirstName DESC', 'SELECT * FROM Persons SORT BY ''FirstName'' DESC', 'C', 1, 5),
-('Com o SQL, como você pode inserir "Olsen" como o "Sobrenome" na tabela "Pessoas"?', 47, 'INSERT INTO Persons (''Olsen'') INTO Name', 'INSERT INTO Persons (''Olsen'') INTO LastName', 'INSERT (''Olsen'') INTO Persons (LastName)', 'INSERT INTO Persons (LastName) VALUES (''Olsen'')', 'D', 1, 5),
-('Como você pode mudar "Hansen" para "Nilsen" na coluna "LastName" na tabela Persons?', 48, 'UPDATE Persons SET LastName=''Hansen'' INTO LastName=''Nilsen''', 'UPDATE Persons SET LastName=''Nilsen'' WHERE LastName=''Hansen''', 'MODIFY Persons SET LastName=''Nilsen'' WHERE LastName=''Hansen''', 'MODIFY Persons SET LastName=''Hansen'' INTO LastName=''Nilsen', 'B', 1, 5),
-('Com o SQL, como você pode retornar o número de registros na tabela "Pessoas"?\r\n', 49, 'SELECT COLUMNS() FROM Persons', 'SELECT COUNT() FROM Persons', 'SELECT COLUMNS(*) FROM Persons', 'SELECT COUNT(*) FROM Persons ', 'D', 1, 5),
-('Com o SQL, como você seleciona todos os registros de uma tabela chamada "Pessoas" onde o valor da coluna "Nome" é "Pedro"?', 50, 'SELECT [all] FROM Persons WHERE FirstName LIKE ''Peter''', 'SELECT * FROM Persons WHERE FirstName=''Peter''', 'SELECT * FROM Persons WHERE FirstName<>''Peter''', 'SELECT [all] FROM Persons WHERE FirstName=''Peter''', 'B', 1, 5),
+('Com o SQL, como você pode retornar todos os registros de uma tabela chamada \"Pessoas\" ordenada descendente por \"Nome\"?', 46, 'SELECT * FROM Persons ORDER FirstName DESC', 'SELECT * FROM Persons SORT \'FirstName\' DESC', 'SELECT * FROM Persons ORDER BY FirstName DESC', 'SELECT * FROM Persons SORT BY \'FirstName\' DESC', 'C', 1, 5),
+('Com o SQL, como você pode inserir \"Olsen\" como o \"Sobrenome\" na tabela \"Pessoas\"?', 47, 'INSERT INTO Persons (\'Olsen\') INTO Name', 'INSERT INTO Persons (\'Olsen\') INTO LastName', 'INSERT (\'Olsen\') INTO Persons (LastName)', 'INSERT INTO Persons (LastName) VALUES (\'Olsen\')', 'D', 1, 5),
+('Como você pode mudar \"Hansen\" para \"Nilsen\" na coluna \"LastName\" na tabela Persons?', 48, 'UPDATE Persons SET LastName=\'Hansen\' INTO LastName=\'Nilsen\'', 'UPDATE Persons SET LastName=\'Nilsen\' WHERE LastName=\'Hansen\'', 'MODIFY Persons SET LastName=\'Nilsen\' WHERE LastName=\'Hansen\'', 'MODIFY Persons SET LastName=\'Hansen\' INTO LastName=\'Nilsen', 'B', 1, 5),
+('Com o SQL, como você pode retornar o número de registros na tabela \"Pessoas\"?\r\n', 49, 'SELECT COLUMNS() FROM Persons', 'SELECT COUNT() FROM Persons', 'SELECT COLUMNS(*) FROM Persons', 'SELECT COUNT(*) FROM Persons ', 'D', 1, 5),
+('Com o SQL, como você seleciona todos os registros de uma tabela chamada \"Pessoas\" onde o valor da coluna \"Nome\" é \"Pedro\"?', 50, 'SELECT [all] FROM Persons WHERE FirstName LIKE \'Peter\'', 'SELECT * FROM Persons WHERE FirstName=\'Peter\'', 'SELECT * FROM Persons WHERE FirstName<>\'Peter\'', 'SELECT [all] FROM Persons WHERE FirstName=\'Peter\'', 'B', 1, 5),
 ('O que significa jQuery?', 51, 'jQuery is a JavaScript Library', 'jQuery is a JSON Library', 'jQuery is a JSON LibraryScript', 'jQuery is a LibraryScript', 'A', 1, 6),
 ('Qual é o código jQuery correto para definir a cor de fundo de todos os elementos p/ para vermelho?', 52, '$(?p?).style(?background-color?,?red?);', '$(?p?).layout(?background-color?,?red?);', '$(?p?).css(?background-color?,?red?);', '$(?p?).manipulate(?background-color?,?red?);', 'C', 1, 6),
 ('Com jQuery, veja o seguinte seletor: $ (“div.intro”). O que ele seleciona?', 53, 'All div elements with class=?intro?', 'The first div element with id=?intro?', 'The first div element with class=?intro?', 'All div elements with id=?intro?', 'D', 1, 6),
@@ -240,7 +243,7 @@ INSERT INTO `questoes` (`enunciado`, `id`, `alternativa_a`, `alternativa_b`, `al
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `questoes_cadastradas`
+-- Estrutura da tabela `questoes_cadastradas`
 --
 
 CREATE TABLE `questoes_cadastradas` (
@@ -256,17 +259,22 @@ CREATE TABLE `questoes_cadastradas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `questoes_cadastradas`
+-- Extraindo dados da tabela `questoes_cadastradas`
 --
 
 INSERT INTO `questoes_cadastradas` (`id`, `enunciado`, `alternativa_a`, `alternativa_b`, `alternativa_c`, `alternativa_d`, `correta`, `peso`, `provas_cadastradas_id`) VALUES
 (1, 'Anos', '+-7000', 'Pariu jesus ', 'Filmou o Big Bang ', 'Tirou bv da Hebe', 'C', '1.00', 24005),
-(2, 'Gastou quanto com mulher', 'Mais de 8000', '3 carros populares', '4 kinder ovo', 'hipotecou a casa', 'D', '1.00', 24005);
+(2, 'Gastou quanto com mulher', 'Mais de 8000', '3 carros populares', '4 kinder ovo', 'hipotecou a casa', 'D', '1.00', 24005),
+(3, 'ftyfty', 'fgty', 'fgt', 'yfg', 'tyft', 'f', '0.00', 1527185633),
+(4, 'f', 'tf', 'tf', 'tf', 'tf', 't', '0.00', 1527185633),
+(5, 'ft', 'ft', 'ft', 'ft', 'ft', 'f', '0.00', 1527185633),
+(6, 'ft', 'ft', 'ft', 'f', 'tf', 't', '0.00', 1527185633),
+(7, 'tf', 'tt', 'ft', 'ft', 'ft', 'f', '0.00', 1527185633);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `temas`
+-- Estrutura da tabela `temas`
 --
 
 CREATE TABLE `temas` (
@@ -275,7 +283,7 @@ CREATE TABLE `temas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela onde conterá os temas das provas ';
 
 --
--- Fazendo dump de dados para tabela `temas`
+-- Extraindo dados da tabela `temas`
 --
 
 INSERT INTO `temas` (`id`, `nome`) VALUES
@@ -287,17 +295,17 @@ INSERT INTO `temas` (`id`, `nome`) VALUES
 (6, 'jQuery');
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `jogadores`
+-- Indexes for table `jogadores`
 --
 ALTER TABLE `jogadores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `jogadores_has_questoes`
+-- Indexes for table `jogadores_has_questoes`
 --
 ALTER TABLE `jogadores_has_questoes`
   ADD PRIMARY KEY (`jogadores_id`,`questoes_id`),
@@ -305,7 +313,7 @@ ALTER TABLE `jogadores_has_questoes`
   ADD KEY `fk_jogadores_has_questoes_jogadores_idx` (`jogadores_id`);
 
 --
--- Índices de tabela `jogadores_has_questoes_cadastradas`
+-- Indexes for table `jogadores_has_questoes_cadastradas`
 --
 ALTER TABLE `jogadores_has_questoes_cadastradas`
   ADD PRIMARY KEY (`jogadores_id`,`questoes_cadastradas_id`),
@@ -313,25 +321,20 @@ ALTER TABLE `jogadores_has_questoes_cadastradas`
   ADD KEY `fk_jogadores_has_questoes_cadastradas_jogadores1_idx` (`jogadores_id`);
 
 --
--- Índices de tabela `logs`
+-- Indexes for table `logs`
 --
 ALTER TABLE `logs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_logs_jogadores1_idx` (`jogadores_id`);
 
 --
--- Índices de tabela `niveis`
+-- Indexes for table `niveis`
 --
 ALTER TABLE `niveis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `professores`
---
-
-
---
--- Índices de tabela `provas`
+-- Indexes for table `provas`
 --
 ALTER TABLE `provas`
   ADD PRIMARY KEY (`id`),
@@ -339,110 +342,114 @@ ALTER TABLE `provas`
   ADD KEY `fk_provas_niveis1_idx` (`niveis_id`);
 
 --
--- Índices de tabela `provas_cadastradas`
+-- Indexes for table `provas_cadastradas`
 --
 ALTER TABLE `provas_cadastradas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `questoes`
+-- Indexes for table `questoes`
 --
 ALTER TABLE `questoes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_questoes_provas1_idx` (`provas_id`);
 
 --
--- Índices de tabela `questoes_cadastradas`
+-- Indexes for table `questoes_cadastradas`
 --
 ALTER TABLE `questoes_cadastradas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_questoes_cadastradas_provas_cadastradas1_idx` (`provas_cadastradas_id`);
 
 --
--- Índices de tabela `temas`
+-- Indexes for table `temas`
 --
 ALTER TABLE `temas`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `jogadores`
+-- AUTO_INCREMENT for table `jogadores`
 --
 ALTER TABLE `jogadores`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'indetificação da tabela jogadores', AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT de tabela `niveis`
+-- AUTO_INCREMENT for table `niveis`
 --
 ALTER TABLE `niveis`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'identificação dos níveis', AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT de tabela `professores`
---
---
--- AUTO_INCREMENT de tabela `provas`
+-- AUTO_INCREMENT for table `provas`
 --
 ALTER TABLE `provas`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'identicação das provas', AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT de tabela `questoes`
+-- AUTO_INCREMENT for table `questoes`
 --
 ALTER TABLE `questoes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'identificação dos níveis', AUTO_INCREMENT=61;
+
 --
--- AUTO_INCREMENT de tabela `questoes_cadastradas`
+-- AUTO_INCREMENT for table `questoes_cadastradas`
 --
 ALTER TABLE `questoes_cadastradas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT de tabela `temas`
+-- AUTO_INCREMENT for table `temas`
 --
 ALTER TABLE `temas`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'identificação do tema', AUTO_INCREMENT=7;
+
 --
--- Restrições para dumps de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `jogadores_has_questoes`
+-- Limitadores para a tabela `jogadores_has_questoes`
 --
 ALTER TABLE `jogadores_has_questoes`
   ADD CONSTRAINT `fk_jogadores_has_questoes_jogadores` FOREIGN KEY (`jogadores_id`) REFERENCES `jogadores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_jogadores_has_questoes_questoes1` FOREIGN KEY (`questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `jogadores_has_questoes_cadastradas`
+-- Limitadores para a tabela `jogadores_has_questoes_cadastradas`
 --
 ALTER TABLE `jogadores_has_questoes_cadastradas`
   ADD CONSTRAINT `fk_jogadores_has_questoes_cadastradas_jogadores1` FOREIGN KEY (`jogadores_id`) REFERENCES `jogadores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_jogadores_has_questoes_cadastradas_questoes_cadastradas1` FOREIGN KEY (`questoes_cadastradas_id`) REFERENCES `questoes_cadastradas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `logs`
+-- Limitadores para a tabela `logs`
 --
 ALTER TABLE `logs`
   ADD CONSTRAINT `fk_logs_jogadores1` FOREIGN KEY (`jogadores_id`) REFERENCES `jogadores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `provas`
+-- Limitadores para a tabela `provas`
 --
 ALTER TABLE `provas`
   ADD CONSTRAINT `fk_provas_niveis1` FOREIGN KEY (`niveis_id`) REFERENCES `niveis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_provas_temas1` FOREIGN KEY (`temas_id`) REFERENCES `temas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `questoes`
+-- Limitadores para a tabela `questoes`
 --
 ALTER TABLE `questoes`
   ADD CONSTRAINT `fk_questoes_provas1` FOREIGN KEY (`provas_id`) REFERENCES `provas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `questoes_cadastradas`
+-- Limitadores para a tabela `questoes_cadastradas`
 --
 ALTER TABLE `questoes_cadastradas`
   ADD CONSTRAINT `fk_questoes_cadastradas_provas_cadastradas1` FOREIGN KEY (`provas_cadastradas_id`) REFERENCES `provas_cadastradas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

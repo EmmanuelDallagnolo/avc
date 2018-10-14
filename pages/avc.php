@@ -40,13 +40,7 @@ include_once("divinformacoes.php");
 
 
   <style media="screen">
-  body{
-    background-image: url("../imgs/fundojogo.jpg");
-    background-repeat: no-repeat;
-  }
-  #backgroundstatus{
-    background-image: url("../imgs/status.jpg");
-  }
+
   </style>
   <script>
   function fechacse() {
@@ -60,6 +54,9 @@ include_once("divinformacoes.php");
     document.getElementById('divranking').style.visibility="visible";
     document.getElementById('fecharankjogo').style.visibility="visible";
   }
+  function notasprovas() {
+  window.location = "mostraprovas.php";
+}
 
   </script>
 </head>
@@ -68,6 +65,8 @@ include_once("divinformacoes.php");
     <img src="../imgs/home.png" id="iconhome" onclick="logout();" alt="" />
     <img src="../imgs/ranking.png" id="iconranking" onclick="abrirranking();"alt="" />
     <h1 class="newFont" id="titulo">A VIDA COBRA OS ESTUDOS</h1>
+    <img src="../imgs/botaoprovas.png" id="iconprovas" onclick="notasprovas();" alt="" />
+    <img src="../imgs/perfilusuario.png" id="iconperfilusuario" onclick="" alt="" />
   </div>
 
 

@@ -57,7 +57,7 @@
         </a>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../imgs/tutorialsaladeaula.png" alt="2o slide">
+        <img class="d-block w-100" src="../imgs/tutorialsaladeprova.png" alt="2o slide">
         <a class="carousel-control-next" href="#tutorial" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>

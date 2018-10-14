@@ -22,6 +22,7 @@ include_once("../includes/banco_de_dados.php");
     };
     xmlhttp.open("POST", "../includes/validaprovacadastrada.php", true);
     xmlhttp.send(formData);
+    debugger;
     document.getElementById('provacadastrada').style.visibility="hidden";
   }
 

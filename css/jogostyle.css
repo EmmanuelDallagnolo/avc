@@ -1,5 +1,16 @@
+body{
+  background-image: url("../imgs/fundojogo.jpg");
+  background-repeat: no-repeat;
+}
+#iconprovas{
+  margin-left: 678px;
+  margin-top: -61px;
+ }
+ #iconperfilusuario{
+   margin-left: 729px;
+   margin-top: -61px;
+ }
 #tela{
-
   margin-left: 400px;
   margin-top: 100px;
   top: 0px;
@@ -11,6 +22,7 @@
   width: 800px;
 }
 #backgroundstatus{
+    background-image: url("../imgs/status.jpg");
   width: 800px;
   position: fixed;
   height: 100;
