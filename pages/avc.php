@@ -57,6 +57,9 @@ include_once("divinformacoes.php");
   function notasprovas() {
   window.location = "mostraprovas.php";
 }
+function perfildousuario() {
+window.location = "perfilusuario.php";
+}
 
   </script>
 </head>
@@ -66,7 +69,7 @@ include_once("divinformacoes.php");
     <img src="../imgs/ranking.png" id="iconranking" onclick="abrirranking();"alt="" />
     <h1 class="newFont" id="titulo">A VIDA COBRA OS ESTUDOS</h1>
     <img src="../imgs/botaoprovas.png" id="iconprovas" onclick="notasprovas();" alt="" />
-    <img src="../imgs/perfilusuario.png" id="iconperfilusuario" onclick="" alt="" />
+    <img src="../imgs/perfilusuario.png" id="iconperfilusuario" onclick="perfildousuario()" alt="" />
   </div>
 
 

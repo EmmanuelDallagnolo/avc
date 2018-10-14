@@ -63,15 +63,15 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <img class="d-block w-100" src="../imgs/tutorialbiblioteca.png" alt="3o slide">
         <a class="carousel-control-next" href="#tutorial" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> -->
       <div class="carousel-item">
-        <img class="d-block w-100" src="../imgs/tutorialsaladeprova.png" alt="4o slide">
+        <img class="d-block w-100" src="../imgs/tutorialbiblioteca.png" alt="4o slide">
         <button type="button" id="botaofinalizartutorial" class="btn btn-success" onclick="fechatutorial();">Finalizar tutorial</button>    </div>
       </div>
 
