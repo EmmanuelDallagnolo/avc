@@ -1,0 +1,108 @@
+body{
+  background-image: url("../imgs/fundojogo22_meio2.png");
+  font-family: 'Indie Flower', cursive;
+}
+#opcao1{
+  margin-left: 36px;
+}
+#opcao2{
+  margin-left: 36px;
+}
+#opcao3{
+  margin-left: 36px;
+}
+#opcao4{
+  margin-left: 36px;
+}
+#p1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 23px;
+}#cadastroprova2{
+  margin-bottom: 200px;
+  text-align: center;
+  margin-top: 96px;
+  padding: 1px;
+}
+#cadastroprova{
+  text-align: center;
+  margin-top: 96px;
+  padding: 1px;
+}
+#codigoprovatext{
+ font-size: 20px;
+}
+#qtd_questoes{
+text-align: center;
+padding: 10px;
+font-size: 17px;
+width: 100px;
+height: 40px;
+margin-left: 27px;
+}
+#botaook{
+padding: -1px;
+margin-bottom: 168px;
+}
+#questionario {
+font-size: 19px;
+color:white;
+width: 500px;
+margin: 0 auto;
+/*background-image: url("imgs/quadro.jpg");*/
+}
+#finalizaprova {
+margin-top: -90px;
+}
+#qtsquestoes {
+font-size: 34px;;
+color: white;
+margin-top: -1px;
+}
+
+#ap {
+
+  padding: 5px;
+width: 420px;
+margin-left: 35px;
+
+}
+
+#enun {
+  padding: 10px;
+width: 423px;
+margin-left: 25px;
+font-size: 16px;
+
+
+}
+
+#op1{
+  padding: 10px;
+  width: 423px;
+  margin-left: -51px;
+  font-size: 16px;
+
+
+}
+
+#altcorrect {
+      margin-left: 8px;
+
+
+}
+
+#altc {
+    margin-left: 102px;
+}
+
+#pquestao{
+      margin-left: 8px;
+
+
+}
+
+#pq {
+
+    margin-left: 109px;
+}
