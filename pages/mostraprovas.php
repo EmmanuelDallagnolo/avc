@@ -18,15 +18,16 @@ function fechamostraprovas() {
 </script>
 </head>
 <body>
-  <?php $arrayUsuarios = select("SELECT * FROM jogadores");
+  <?php
+  $arrayUsuarios = select("SELECT * FROM jogadores");
   foreach ($arrayUsuarios as $key => $value) {
     if ($value["email"] == $_SESSION["usuario"]["email"]) {
       $arrayQuestoesUsuario = select("SELECT * FROM jogadores_has_questoes WHERE jogadores_id = '{$value['id']}'");
 
     }
-  } ?>
+  }
+  ?>
   <div class="" id="divmostraprova">
-
     <?php
     $nmrquestao = 0;
     foreach ($arrayQuestoesUsuario as $key => $value){

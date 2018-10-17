@@ -44,7 +44,7 @@ if ($prova_finalizada == 1) {
       echo "1";
     }else {
       $mudar_nivel = sql_delete_update("UPDATE jogadores SET nivel_prova= 1, nmr_prova = 1, provas_feitas = 0 WHERE id = {$_SESSION['usuario']['id']}");
-      $reprovado = "DELETE FROM `jogadores_has_questoes` WHERE `jogadores_has_questoes`.`jogadores_id` = 1";
+      $reprovado = sql_delete_update("DELETE FROM `jogadores_has_questoes` WHERE `jogadores_has_questoes`.`jogadores_id` = {$_SESSION['usuario']['id']}");
       echo "2";
     }
 

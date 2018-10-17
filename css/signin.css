@@ -19,22 +19,16 @@ body {
   margin-top: 39px;
   text-align: center;
   margin: auto;
-
     background-image: url("../imgs/cadernologin.png");
     background-repeat: no-repeat;
     background-position: center;
-
-
 }
-
-
 .form-signin {
   width: 100%;
   max-width: 400px;
   padding: 15px;
   margin: auto;
   margin-top: -49px;
-
 }
 .form-signin .checkbox {
   font-weight: 400;

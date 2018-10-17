@@ -12,18 +12,17 @@ function funcaoprovacadastrada(jogador){
     if ((jogador.posX > avccse.esquerda && jogador.posX < avccse.direita) && (jogador.posY > avccse.cima && jogador.posY < avccse.baixo)) {
       var c = confirm("Realizar prova!!!");
       if (c == true) {
-        debugger;
-        document.getElementById("codigoprovabotao").style.visibility = "visible";
-        document.getElementById("codigoprova").style.visibility = "visible";
-        document.getElementById("provacadastrada").style.visibility="visible";
         jogador.posX = 800;
         jogador.posY = 1160;
         jogador.mvRight = false;
         jogador.mvLeft = false;
         jogador.mvUp = false;
         jogador.mvDown = false;
+        document.getElementById("codigoprovabotao").style.visibility = "visible";
+        document.getElementById("codigoprova").style.visibility = "visible";
+        document.getElementById("provacadastrada").style.visibility="visible";
       }else {
-
+        alert("br");
         jogador.posX = 868;
         jogador.posY = 1236;
         jogador.mvRight = false;
@@ -31,9 +30,6 @@ function funcaoprovacadastrada(jogador){
         jogador.mvUp = false;
         jogador.mvDown = false;
       }
-
-
-
     }
   }
 

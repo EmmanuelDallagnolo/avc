@@ -1,6 +1,5 @@
 
 <?php session_start();
-include_once("mostraprovas.php");
 include_once("ranking.php");
 include_once("montaprova.php");
 include_once("csebody.php");
@@ -15,7 +14,6 @@ include_once("divinformacoes.php");
   <link rel="stylesheet" type="text/css" href="../css/csestyle.css"/>
   <link rel="stylesheet" type="text/css" href="../css/provastyle.css"/>
   <link rel="stylesheet" type="text/css" href="../css/passounivelstyle.css"/>
-  <link rel="stylesheet" type="text/css" href="../css/mostraprovastyle.css"/>
   <link rel="stylesheet" type="text/css" href="../css/jogostyle.css"/>
   <link rel="stylesheet" type="text/css" href="../css/provacadastradastyle.css"/>
   <link rel="icon" href="../imgs/logo_jDA_icon.ico">

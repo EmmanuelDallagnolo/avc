@@ -12,7 +12,7 @@ $posicao = 0;?>
   }
   </style>
   <meta charset="utf-8">
-  <title>Ranking</title>
+  <title></title>
   <script type="text/javascript">
   function fecharanking() {
     document.getElementById('divranking').style.visibility="hidden";

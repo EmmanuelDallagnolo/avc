@@ -17,12 +17,13 @@ include_once("../includes/banco_de_dados.php");
 
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        criarProvacadastrada();
+        alert("UHUL nota enviado");
+        var formBuscaProva = '<input type="text" id="codigoprova" placeholder="Codigo prova" value=""><input type="button" id="codigoprovabotao" onclick="criarProvacadastrada()" value="Ok">';
+        document.getElementById('provacadastrada').innerHTML = formBuscaProva;
       }
     };
     xmlhttp.open("POST", "../includes/validaprovacadastrada.php", true);
     xmlhttp.send(formData);
-    debugger;
     document.getElementById('provacadastrada').style.visibility="hidden";
   }
 
@@ -32,7 +33,6 @@ include_once("../includes/banco_de_dados.php");
 
 
   function criarProvacadastrada(){
-    debugger;
     codigoProva = document.getElementById("codigoprova").value;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {

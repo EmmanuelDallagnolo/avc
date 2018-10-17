@@ -9,14 +9,16 @@
   overflow: auto;
   padding-left: 25px;
   top: 0px;
-
+z-index: 2;
 }
 #codigoprova{
   visibility: hidden;
+  z-index: 4;
 
 }
 #codigoprovabotao{
   visibility: hidden;
+  z-index: 4;
 }
 .alinhamentoTexto{
   white-space: pre-line;
