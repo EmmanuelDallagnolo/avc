@@ -22,7 +22,6 @@ function funcaoprovacadastrada(jogador){
         document.getElementById("codigoprova").style.visibility = "visible";
         document.getElementById("provacadastrada").style.visibility="visible";
       }else {
-        alert("br");
         jogador.posX = 868;
         jogador.posY = 1236;
         jogador.mvRight = false;

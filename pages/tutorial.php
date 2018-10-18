@@ -50,28 +50,35 @@
   <div id="tutorial" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="imgs/tutorialmovimento.png" alt="1o slide">
+        <img class="d-block w-100" src="../imgs/tutorialmovimento.png" alt="1o slide">
         <a class="carousel-control-next" href="#tutorial" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="imgs/tutorialsaladeaula.png" alt="2o slide">
+        <img class="d-block w-100" src="../imgs/tutorialsaladeaula.png" alt="2o slide">
         <a class="carousel-control-next" href="#tutorial" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="imgs/tutorialbiblioteca.png" alt="3o slide">
+        <img class="d-block w-100" src="../imgs/tutorialbiblioteca.png" alt="3o slide">
         <a class="carousel-control-next" href="#tutorial" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="imgs/tutorialsaladeprova.png" alt="4o slide">
+        <img class="d-block w-100" src="../imgs/tutorialdivinformacoes.png" alt="4o slide">
+        <a class="carousel-control-next" href="#tutorial" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../imgs/tutorialsaladeprova.png" alt="5o slide">
         <button type="button" id="botaofinalizartutorial" class="btn btn-success" onclick="fechatutorial();">Finalizar tutorial</button>    </div>
       </div>
 
