@@ -7,7 +7,7 @@
   color: white;
   padding: 35px;
   position: relative;
- }
+}
 #DIusuario{
   font-size: 20px;
 }
@@ -17,6 +17,21 @@
 #DIfase{
   font-size: 20px;
 }
+#inserirprovaref{
+  font-size: 18px;
+position: relative;
+top: 9px;
+left: 38px;
+color: white;
+}
 #DIprova{
   font-size: 20px;
+}
+#criarprovaref{
+  background-image: url("../imgs/criarprovaref.png");
+  position: relative;
+  top: 208px;
+  left: -215px;
+  width: 284px;
+  height: 71px;
 }
