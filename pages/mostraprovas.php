@@ -51,22 +51,22 @@ include_once("../includes/banco_de_dados.php");
     <table class="table" style="color:white";>
       <thead>
         <tr>
-          <th scope="col">Usuário:</th>
-          <th scope="col">Html:</th>
-          <th scope="col">PHP:</th>
-          <th scope="col">CSS:</th>
-          <th scope="col">Java Script:</th>
-          <th scope="col">SQL:</th>
-          <th scope="col">JQuery:</th>
+          <th id="notasfont" scope="col">Usuário:</th>
+          <th id="notasfont" scope="col">Html:</th>
+          <th id="notasfont" scope="col">PHP:</th>
+          <th id="notasfont" scope="col">CSS:</th>
+          <th id="notasfont" scope="col">Java Script:</th>
+          <th id="notasfont" scope="col">SQL:</th>
+          <th id="notasfont" scope="col">JQuery:</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row"><?php echo $_SESSION['usuario']['usuario']?></th>
+          <th id="notasfont" scope="row"><?php echo $_SESSION['usuario']['usuario']?></th>
           <?php
           for($cont=1; $cont<7; $cont++){
             $notaprova = (isset($nota[$cont]))?$nota[$cont]:0;
-            echo "<td>".$notaprova."</td>";
+            echo "<td id='notasfont'>".$notaprova."</td>";
           }
            ?>
         </tr>

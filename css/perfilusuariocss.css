@@ -25,13 +25,17 @@
   font-family: 'Nanum Gothic', sans-serif;
   font-family: 'Indie Flower', cursive;
 }
+#pageadminjogadores{
+  left: -86px;
+  position: relative;
+}
 #titulos{
   font-size: 20px;
   padding-left: 20px;
 }
 #titleadm{
   color: white;
-  margin-left: 600px;
+  margin-left: 713px;
 }
 #pontuacao{
   padding-left: 20px;

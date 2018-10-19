@@ -1,19 +1,27 @@
 #voltarjogocss{
   position: relative;
-  top: 265px;
-  left: 239px;
+  top: 423px;
+  left: 275px;
+
 }
 #notascss{
-  margin-top: -300px;
-  margin-left: 756px;
-  margin-right: -857px;;
+  top: -211px;
+      left: 599px;
+      right: -857px;
+      position: relative;
+}
+#notasfont{
+  font-size: 24px;
 }
 #divtabela{
-  margin-top: 85px;
-  margin-left: 543px;
+  top: -91px;
+    left: 269px;
+    position: relative;
+        width: 668px;
 }
 #logonotas{
   position: relative;
-  top: -252px;
-  left: 861px;
+  top: -299px;
+  left: 708px;
+
 }
