@@ -1,0 +1,15 @@
+.inputForm {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Indie Flower', cursive;
+}
+.inputForm:focus{
+  background-color: transparent;
+}
+.newFont{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Indie Flower', cursive;
+}
