@@ -2,7 +2,7 @@
 function select($pQuery){
 
 	$conexao = mysqli_connect("localhost", "root", "", "bd_avc");
-
+mysqli_set_charset($conexao, 'utf8');
 	$dados = mysqli_query($conexao, $pQuery) or die("Sua query retornou um erro");
 
 
@@ -25,7 +25,7 @@ function php_insert($pQuery){
 
 
 	$conexao = mysqli_connect("localhost", "root", "", "bd_avc");
-
+mysqli_set_charset($conexao, 'utf8');
 	$dados = mysqli_query($conexao,$pQuery) or die("Error ao realizar o insert");
 
 	mysqli_close($conexao);
@@ -35,7 +35,7 @@ function php_insert($pQuery){
 function sql_delete_update($pQuery){
 
 	$conexao = mysqli_connect("localhost", "root", "", "bd_avc");
-
+mysqli_set_charset($conexao, 'utf8');
 	$dados = mysqli_query($conexao,$pQuery) or die("erro ao executar a query");
 
 	$atualizadas = mysqli_affected_rows($conexao);

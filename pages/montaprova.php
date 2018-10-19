@@ -11,8 +11,10 @@ include_once("../includes/banco_de_dados.php");
   function passounivel() {
     alert("Passou de nivel");
   }
-  function npassounivel() {;
+  function npassounivel() {
+
     alert("Reprovado");
+  }
   function fechaprova() {
     document.getElementById("prova").style.visibility = "hidden";
 
@@ -53,7 +55,7 @@ include_once("../includes/banco_de_dados.php");
         arrayProva = JSON.parse(this.responseText);
         criarQuestoes();
       }
-    }
+    };
 
     xmlhttp.open("POST", "../includes/buscaProva.php?tipo=0", true);
     xmlhttp.send();

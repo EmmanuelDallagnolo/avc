@@ -24,6 +24,17 @@ body{
   margin-top: 96px;
   padding: 1px;
 }
+#assuprova{
+  position: relative;
+      width: 336px;
+
+}
+#opcoes{
+
+  position: relative;
+width: 422px;
+left: -31px;
+}
 #cadastroprova{
   text-align: center;
   margin-top: 96px;
@@ -58,4 +69,48 @@ margin-top: -90px;
 font-size: 34px;;
 color: white;
 margin-top: -1px;
+}
+ #ap {
+   padding: 5px;
+width: 420px;
+margin-left: 35px;
+ }
+ #enun {
+  padding: 10px;
+width: 423px;
+margin-left: 25px;
+font-size: 16px;
+ }
+ #op1{
+  padding: 10px;
+  width: 423px;
+  margin-left: -51px;
+  font-size: 16px;
+ }
+ #altcorrect {
+      margin-left: 8px;
+      position: relative;
+left: 50px;
+ }
+ #numerosquestao{
+   position: relative;
+     top: -50px;
+ }
+ #textaltpeso{
+   position: relative;
+       left: 57px;
+ }
+ #pesoquest{
+   position: relative;
+margin-top: 12px;
+    left: 58px;
+ }
+ #altc {
+    margin-left: 102px;
+}
+ #pquestao{
+      margin-left: 8px;
+ }
+ #pq {
+     margin-left: 109px;
 }

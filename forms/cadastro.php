@@ -12,8 +12,6 @@
   <meta charset="utf-8">
   <title>Cadastro</title>
   <style media="screen">
-
-
   body {
     background-image: url("../imgs/fundojogo.jpg");
     background-repeat: no-repeat;
@@ -21,8 +19,13 @@
   #cadernocadastro{
     background-image: url("../imgs/caderno.png");
   }
-
   </style>
+  <?php
+  include_once("../includes/banco_de_dados.php");
+  if(isset($_GET["erro"]) && $_GET["erro"] == 2){
+    echo "<script>alert('Usuario ja cadastrado')</script>";
+  }
+  ?>
 </head>
 <body class="text-center">
   <div class="" id="cadernocadastro">

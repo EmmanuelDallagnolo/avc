@@ -8,14 +8,16 @@ if (isset($_POST["inputusuario"])) {
     if ($value["usuario"] == $_POST["inputusuario"] || $value["email"] == $_POST["inputemail"]) {
       $jacadastrado += 1;
       echo "<script>alert('Usuario ja cadastrado')</script>";
+      header("Location: ../forms/cadastro.php?erro=2");
+      exit();
       break;
     }
   }
   if ($jacadastrado == 0) {
     if ($_POST['inlineRadioOptions'] == "option1") {
-      $sexo = '1';
+      $sexo = 'Masculino';
     }else{
-      $sexo = '2';
+      $sexo = 'Feminino';
     }
     $data_atual = date('Y/m/d H:i:s');
     $cadastrou = php_insert("INSERT INTO jogadores VALUES (DEFAULT,'{$_POST['inputnome']}','{$_POST['inputsobrenome']}','{$_POST['inputusuario']}','$sexo','$data_atual','{$_POST['inputemail']}','{$_POST['inputsenha']}','{$_POST['inputdatanasc']}',1,1,0,0)");
@@ -47,9 +49,3 @@ if(isset($_POST["email"])){
   }
   header("Location: ../index.php?erro=1");
 }
-
-
-
-
-
-?>

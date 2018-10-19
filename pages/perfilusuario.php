@@ -41,7 +41,7 @@
     form+=  '<tr id="<?php echo $_SESSION['usuario']['id'] ?>">'
     form+=  '<td><input type="text" name="nome" onfocusout="alteradados(this)" value="<?php echo $_SESSION['usuario']['nome'] ?>"></td>'
     form+=  '<td><input type="text" name="sobrenome" onfocusout="alteradados(this)" value="<?php echo $_SESSION['usuario']['sobrenome'] ?>"></td>'
-    form+=  '<td><input type="text" name="sexo" onfocusout="alteradados(this)" value="<?php echo $_SESSION['usuario']['avatar'] ?>"></td>'
+    form+=  '<td><input type="text" name="avatar" onfocusout="alteradados(this)" value="<?php echo $_SESSION['usuario']['avatar'] ?>"></td>'
     form+=  '<td id="titulos"><?php echo $_SESSION['usuario']['usuario']?></td>'
     form+=  '<td id="titulos"><?php echo $_SESSION['usuario']['data_cadastro'] ?></td>'
     form+=  '<td id="titulos"><?php echo $_SESSION['usuario']['email'] ?></td>'
