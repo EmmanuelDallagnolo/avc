@@ -11,14 +11,27 @@
   top: 0px;
 z-index: 2;
 }
+#codigoprovatitulo{
+  visibility: hidden;
+  position: relative;
+top: 191px;
+left: 140px;
+}
 #codigoprova{
   visibility: hidden;
   z-index: 4;
+  position: relative;
+top: 255px;
+left: 240px;
 
 }
 #codigoprovabotao{
   visibility: hidden;
   z-index: 4;
+  position: relative;
+top: 255px;
+left: 240px;
+
 }
 .alinhamentoTexto{
   white-space: pre-line;

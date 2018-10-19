@@ -17,8 +17,10 @@ include_once("../includes/banco_de_dados.php");
 
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        alert("UHUL nota enviado");
-        var formBuscaProva = '<input type="text" id="codigoprova" placeholder="Codigo prova" value=""><input type="button" id="codigoprovabotao" onclick="criarProvacadastrada()" value="Ok">';
+        alert("Prova concluida");
+        var formBuscaProva = '<h1 id="codigoprovatitulo">Insira o código da prova</h1>';
+        formBuscaProva += '<input type="text" id="codigoprova" placeholder="Codigo prova" value="">';
+        formBuscaProva += '<input type="button" id="codigoprovabotao" onclick="criarProvacadastrada()" value="Ok">';
         document.getElementById('provacadastrada').innerHTML = formBuscaProva;
       }
     };
@@ -114,9 +116,9 @@ include_once("../includes/banco_de_dados.php");
 <body>
 
   <div id="provacadastrada">
+    <h1 id="codigoprovatitulo">Insira o código da prova</h1>
     <input type="text" id="codigoprova" placeholder="Codigo prova" value="">
     <input type="button" id="codigoprovabotao" onclick="criarProvacadastrada()" value="Ok">
-
   </div>
 </body>
 </html>

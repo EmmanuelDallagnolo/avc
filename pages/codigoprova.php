@@ -27,6 +27,11 @@
     for($i = 1; $i <= $_POST['qtd_questoes']; $i++){
       $inserequestoes =  php_insert("INSERT INTO questoes_cadastradas VALUES (DEFAULT, '{$_POST['enunciado_'.$i]}', '{$_POST['opcao1_'.$i]}', '{$_POST['opcao2_'.$i]}', '{$_POST['opcao3_'.$i]}', '{$_POST['opcao4_'.$i]}', '{$_POST['correta_'.$i]}', '{$_POST['pesoquestao_'.$i]}', $codigo)");
     }
+    $to_email = $_SESSION['usuario']['email'];
+    $subject = 'A vida cobra os estudos';
+    $message = 'Código da sua prova sobre: '.$_POST['assuntoprova'].' código: '.$codigo;
+    $headers = 'From: noreply @ avc . com';
+    mail($to_email,$subject,$message,$headers);
   }
   ?>
   <script type="text/javascript">

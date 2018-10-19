@@ -21,6 +21,7 @@ function funcaoprovacadastrada(jogador){
         document.getElementById("codigoprovabotao").style.visibility = "visible";
         document.getElementById("codigoprova").style.visibility = "visible";
         document.getElementById("provacadastrada").style.visibility="visible";
+        document.getElementById("codigoprovatitulo").style.visibility="visible";
       }else {
         jogador.posX = 868;
         jogador.posY = 1236;

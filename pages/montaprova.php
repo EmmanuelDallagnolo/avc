@@ -9,17 +9,10 @@ include_once("../includes/banco_de_dados.php");
   <title></title>
   <script>
   function passounivel() {
-    document.getElementById('passnivel').style.visibility="visible";
-    setTimeout(function () {
-      document.getElementById('passnivel').style.visibility="hidden";
-    }, 3000);
+    alert("Passou de nivel");
   }
   function npassounivel() {;
-    document.getElementById('npassnivel').style.visibility="visible";
-    setTimeout(function () {
-      document.getElementById('npassnivel').style.visibility="hidden";
-    }, 3000);
-  }
+    alert("Reprovado");
   function fechaprova() {
     document.getElementById("prova").style.visibility = "hidden";
 

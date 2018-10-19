@@ -19,6 +19,10 @@ CREATE DATABASE bd_avc;
 USE bd_avc;
 --
 
+
+
+-- --------------------------------------------------------
+
 --
 -- Estrutura da tabela `jogadores`
 --
@@ -44,9 +48,9 @@ CREATE TABLE `jogadores` (
 --
 
 INSERT INTO `jogadores` (`id`, `nome`, `sobrenome`, `usuario`, `avatar`, `data_cadastro`, `email`, `senha`, `data_nasci`, `nivel_prova`, `nmr_prova`, `pontuacao`, `provas_feitas`) VALUES
-(1, 'emmanuel', 'dallagnolo', 'nuel', '0', '2018-08-24 03:19:03', 'emmanueldallagnolo@gmail.com', '123', '2018-08-08', 1, 3, '99.99', 2),
-(2, 'andre', 'bitencourt', 'velho', '0', '2018-08-24 03:19:49', 'andre@gmail.com', '123', '1945-08-08', 1, 4, '99.99', 1),
-(4, 'guilherme', 'lins', 'gordinho fibrado', '0', '2018-09-08 01:56:01', 'guilhermelins@gmail.com', '123', '2018-03-12', 1, 1, '1.00', 0);
+(1, 'emmanuel', 'dallagnolo', 'nuelzin 2 metro', 'M', '2018-08-24 03:19:03', 'emmanueldallagnolo@gmail.com', '123', '2018-08-08', 1, 1, '99.99', 0),
+(2, 'andre', 'bitencourt', 'voz da experiencia', 'M', '2018-08-24 03:19:49', 'andre@gmail.com', '123', '1945-08-08', 1, 1, '0.00', 0),
+(4, 'guilherme', 'lins', 'G. fibrado', 'M', '2018-09-08 01:56:01', 'guilhermelins@gmail.com', '123', '2018-03-12', 1, 1, '1.00', 0);
 
 -- --------------------------------------------------------
 
@@ -71,14 +75,6 @@ CREATE TABLE `jogadores_has_questoes_cadastradas` (
   `questoes_cadastradas_id` int(11) NOT NULL,
   `resposta` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `jogadores_has_questoes_cadastradas`
---
-
-INSERT INTO `jogadores_has_questoes_cadastradas` (`jogadores_id`, `questoes_cadastradas_id`, `resposta`) VALUES
-(2, 1, ''),
-(2, 2, '');
 
 -- --------------------------------------------------------
 
@@ -146,15 +142,6 @@ CREATE TABLE `provas_cadastradas` (
   `id` int(11) NOT NULL,
   `nome` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `provas_cadastradas`
---
-
-INSERT INTO `provas_cadastradas` (`id`, `nome`) VALUES
-(0, 'AndrÃ©'),
-(24005, 'Andre'),
-(1527185633, 'ty');
 
 -- --------------------------------------------------------
 
@@ -257,19 +244,6 @@ CREATE TABLE `questoes_cadastradas` (
   `peso` decimal(4,2) NOT NULL,
   `provas_cadastradas_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `questoes_cadastradas`
---
-
-INSERT INTO `questoes_cadastradas` (`id`, `enunciado`, `alternativa_a`, `alternativa_b`, `alternativa_c`, `alternativa_d`, `correta`, `peso`, `provas_cadastradas_id`) VALUES
-(1, 'Anos', '+-7000', 'Pariu jesus ', 'Filmou o Big Bang ', 'Tirou bv da Hebe', 'C', '1.00', 24005),
-(2, 'Gastou quanto com mulher', 'Mais de 8000', '3 carros populares', '4 kinder ovo', 'hipotecou a casa', 'D', '1.00', 24005),
-(3, 'ftyfty', 'fgty', 'fgt', 'yfg', 'tyft', 'f', '0.00', 1527185633),
-(4, 'f', 'tf', 'tf', 'tf', 'tf', 't', '0.00', 1527185633),
-(5, 'ft', 'ft', 'ft', 'ft', 'ft', 'f', '0.00', 1527185633),
-(6, 'ft', 'ft', 'ft', 'f', 'tf', 't', '0.00', 1527185633),
-(7, 'tf', 'tt', 'ft', 'ft', 'ft', 'f', '0.00', 1527185633);
 
 -- --------------------------------------------------------
 
@@ -399,7 +373,7 @@ ALTER TABLE `questoes`
 -- AUTO_INCREMENT for table `questoes_cadastradas`
 --
 ALTER TABLE `questoes_cadastradas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `temas`
